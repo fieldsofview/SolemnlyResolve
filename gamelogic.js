@@ -3,6 +3,8 @@ const stats = {
     appeal: 0,
     transparency: 0,
     backing: 0,
+    preambleOG: [],
+    preamble: [],
 
     setStats: function (init = [0, 0, 0, 0]) {
         this.money = init[0];
@@ -16,6 +18,40 @@ const stats = {
         this.appeal = this.appeal + delta[1];
         this.transparency = this.transparency + delta[2];
         this.backing = this.backing + delta[3];
+    },
+
+    setPreamble: function (p) {
+        p.forEach((e) => {
+            this.preamble.push(e);
+            if(e>0){
+                this.preambleOG.push(true);
+            } else {
+                this.preambleOG.push(false);
+            }
+        });
+    },
+
+    updatePreamble: function (p) {
+        // this.preamble = this.preambleOG+parameter;
+        p.forEach((e,index) => {
+            this.preamble[index] = this.preamble[index] + e;
+        });
+    },
+
+    exportPreamble: function(){
+        let temp = [];
+        
+        this.preamble.forEach((e,index) => {
+            if(e>0){
+                temp.push(true);
+            } else if(e<0) {
+                temp.push (false);
+            } else {
+                temp.push(this.preambleOG[index]);
+            }
+        });
+
+        sessionStorage.preamble = JSON.stringify(temp);
     },
 
     limiter: function (n) {
@@ -36,54 +72,78 @@ const stats = {
         return [this.limiter(this.money), this.limiter(this.appeal), this.limiter(this.transparency), this.limiter(this.backing)];
     },
 };
-let index = 0;
-let scenario = 0;
-try {
-    scenario = JSON.parse(sessionStorage.scenario);
-} catch (e) {
-    scenario = 0;
-    console.log(e);
-}
-console.log(`Scenario from memory is ` + scenario);
 
-let playerNames;
-try {
-    playerNames = JSON.parse(sessionStorage.playerNames);
-} catch (e) {
-    playerNames = {
-        A: `Player 1`,
-        B: `Player 2`,
-        C: `Player 3`,
-        D: `Player 4`
-    };
-    console.log(e);
-}
-console.log(playerNames);
+const gameVariables = {
+    index: 0,
+    scenario: 0,
+    playerNames: '',
+
+    getScenario: function () {
+        try {
+            this.scenario = JSON.parse(sessionStorage.scenario);
+            console.log(`Scenario from memory is ` + this.scenario);
+        } catch (e) {
+            this.scenario = 0;
+            console.log(`Scenario defaulted is ` + this.scenario);
+            console.log(e);
+        }
+    },
+
+    scenarioSelect: function (number = 0) {
+        switch (number) {
+            case 0:
+                stats.setStats([75, 25, 25, 50]);
+                stats.setPreamble([1, -1, 1, 1, 1, 1, 1, 1, 1, -1, -1, 1, 1, 1]);
+                break;
+            case 1:
+                stats.setStats([25, 75, 25, 50]);
+                stats.setPreamble([-1, -1, 1, 1, -1, 1, -1, -1, -1, 1, -1, -1, 1, -1]);
+                break;
+            case 2:
+                stats.setStats([25, 50, 75, 25]);
+                stats.setPreamble([1, -1, 1, -1, -1, 1, 1, 1, -1, 1, 1, 1, 1, 1]);
+                break;
+            case 3:
+                stats.setStats([50, 25, 25, 75]);
+                stats.setPreamble([-1, -1, 1, -1, 1, -1, 1, 1, 1, -1, -1, 1, 1, 1]);
+                break;
+            default:
+                stats.setStats([50, 50, 50, 50]);
+                stats.setPreamble([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]);
+                break;
+        }
+    },
+
+    getPlayerNames: function () {
+        try {
+            this.playerNames = JSON.parse(sessionStorage.playerNames);
+        } catch (e) {
+            playerNames = {
+                A: `Player 1`,
+                B: `Player 2`,
+                C: `Player 3`,
+                D: `Player 4`
+            };
+            console.log(e);
+        }
+        console.log(this.playerNames);
+    },
+
+    init: function () {
+        this.getScenario();
+        this.getPlayerNames();
+        this.scenarioSelect(this.scenario);
+    },
+};
+
+
 // -------------------------
 // To update the text inside span
 // $("#id")[0].textContent="";
 
 // ------------------------
 
-function scenarioSelect(number = 0) {
-    switch (number) {
-        case 0:
-            stats.setStats([75, 25, 25, 50]);
-            break;
-        case 1:
-            stats.setStats([25, 75, 25, 50]);
-            break;
-        case 2:
-            stats.setStats([25, 50, 75, 25]);
-            break;
-        case 3:
-            stats.setStats([50, 25, 25, 75]);
-            break;
-        default:
-            stats.setStats([50, 50, 50, 50]);
-            break;
-    }
-}
+
 
 // function getRandomIntInclusive(min, max) {
 //     min = Math.ceil(min);
@@ -277,8 +337,8 @@ const moneyBox = {
         playerCoins[this.current] = playerCoins[this.current] - this.moneyCount;
         this.moneyCount = 1;
         this.boxDisplayFlag = false;
-        updateEverything();
-        moveThingsAlong(this.choiceTracker);
+        console.log(this.choiceTracker);
+        moveThingsAlong(this.choiceInt());
     },
 
     counterupdater: function () {
@@ -350,7 +410,9 @@ const choicesFx = {
 
     choiceSenderConsent: function () {
         moneyBox.boxDisplayFlag = false;
-        moveThingsAlong(this.attributes['data-label'].textContent);
+        console.log(this.attributes['data-label'].textContent);
+        let temp = parseInt(this.attributes['data-label'].textContent.slice(-1));
+        moveThingsAlong(temp);
     },
 
     choiceSenderGive: function () {
@@ -372,14 +434,49 @@ const choicesFx = {
 choicesUI.choicesHide();
 choicesUI.choicesShow();
 
+const overlayThings = {
+    imageGroup: document.querySelector("#imageGroup"),
+    imageBox: document.querySelector("#u1057_img"),
+    bgLayer: document.querySelector("#u1057_img"),
+    displayFlag: false,
+
+    init: function () {
+        this.imageBox.src = './images/situations/' + gameVariables.scenario + '.png';
+        // this.imageGroup.style.zIndex = '-1'
+        this.imageGroup.style.display = 'block';
+        this.imageGroup.addEventListener('click', this.clickDisappear);
+    },
+
+    clickDisappear: function () {
+        overlayThings.displayFlag = false;
+        updateEverything();
+        nextScenario();
+    },
+
+    display: function () {
+        if (this.displayFlag) {
+            this.imageGroup.style.display = 'block';
+        } else {
+            this.imageGroup.style.display = 'none';
+        }
+    },
+
+    changeImage: function (src, flag) {
+        this.imageBox.src = src;
+        this.displayFlag = flag;
+        this.display();
+    },
+};
 
 function initEverything() {
-    scenarioSelect();
-    playerNamesFrontEnd.updatePlayerNames(playerNames);
-    situationFrontEnd.updateSituation(situations[index]);
+    gameVariables.init();
+    playerNamesFrontEnd.updatePlayerNames(gameVariables.playerNames);
+    situationFrontEnd.updateSituation(situations[gameVariables.index]);
     barsFrontEnd.updateBars();
     moneySidebar.update();
     moneyBox.initOnClick();
+
+    overlayThings.init();
 
     choicesUI.buttonInit();
     choicesFx.choicesInit();
@@ -393,22 +490,36 @@ function updateEverything() {
     moneySidebar.update();
     moneyBox.boxDisplay();
     barsFrontEnd.updateBars();
+    overlayThings.display();
 }
 
 
 function moveThingsAlong(d) {
-    console.log(situations[index][d]);
+    let temp = './images/newspapers/' + gameVariables.index + 'choice' + d + '.png';
+    console.log(temp);
+    overlayThings.changeImage(temp, true);
 
-    stats.updateStats(situations[index][d]);
+    let delta = 'delta' + d;
+    console.log(situations[gameVariables.index][delta]);
+    stats.updateStats(situations[gameVariables.index][delta]);
+    stats.updatePreamble(situations[gameVariables.index].preamble);
+
     updateEverything();
+}
 
+function nextScenario() {
     //add code here to check for after scenario 6 and 12
-    if (index<11){
-        index++;
+    if (gameVariables.index < 11) {
+        gameVariables.index++;
+    } else {
+        //export thing to memory
+        stats.exportPreamble();
+
+        //go to preamble page
+        window.location.href = './preamble.html';
     }
 
-    situationFrontEnd.updateSituation(situations[index]);
-
+    situationFrontEnd.updateSituation(situations[gameVariables.index]);
 }
 
 initEverything();
