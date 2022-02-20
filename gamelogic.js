@@ -174,6 +174,19 @@ let playerCoins = {
     Name2: 10,
     Name3: 10
 }
+const moneySidebar = {
+    Name0: document.querySelector("#u861_text").children[0].children[0],
+    Name1: document.querySelector("#u868_text").children[0].children[0],
+    Name2: document.querySelector("#u875_text").children[0].children[0],
+    Name3: document.querySelector("#u882_text").children[0].children[0],
+
+    update: function () {
+        this.Name0.textContent = playerCoins.Name0;
+        this.Name1.textContent = playerCoins.Name1;
+        this.Name2.textContent = playerCoins.Name2;
+        this.Name3.textContent = playerCoins.Name3;
+    },
+};
 
 const moneyBox = {
     whiteShape: 'images/main/rectangle_234_u1031.svg',
@@ -241,12 +254,80 @@ const moneyBox = {
 };
 
 moneyBox.initOnClick();
+moneySidebar.update();
 
+const choicesUI = {
+    choice1: document.querySelector("#u987"),
+    choice2: document.querySelector("#u1001"),
+    choice3: document.querySelector("#u1015"),
+    button: document.querySelector("#u1053"),
+    display: false,
+    buttonDisplay: true,
 
+    buttonInit: function () {
+        this.button.addEventListener('click', choicesUI.choicesShow);
+    },
 
+    choicesHide: function () {
+        choicesUI.choice1.style.display = 'none';
+        choicesUI.choice2.style.display = 'none';
+        choicesUI.choice3.style.display = 'none';
+        choicesUI.display = false;
+        choicesUI.button.style.display = 'block';
+        choicesUI.buttonDisplay = true;
+    },
+
+    choicesShow: function () {
+        choicesUI.choice1.style.display = 'block';
+        choicesUI.choice2.style.display = 'block';
+        choicesUI.choice3.style.display = 'block';
+        choicesUI.display = true
+        choicesUI.button.style.display = 'none'
+        choicesUI.buttonDisplay = false;
+    }
+};
+
+//no matter what the consent buttons will always send out delta1 delta 2 delta 3
+const choicesFx = {
+    choice1Consent: document.querySelector("#u991"),
+    choice2Consent: document.querySelector("#u1005"),
+    choice3Consent: document.querySelector("#u1019"),
+    choice1Give: document.querySelector("#u994"),
+    choice2Give: document.querySelector("#u1008"),
+    choice3Give: document.querySelector("#u1022"),
+
+    choiceSenderConsent: function () {
+        // console.log(this.attributes['data-label'].textContent);
+        ConsensusButtonClickSomethingHappen(this.attributes['data-label'].textContent);
+    },
+
+    choiceSenderGive: function(){
+        // moneyBox.actionTime(this.attributes['data-label'].textContent);
+    },
+
+    choicesInit: function(){
+        this.choice1Consent.addEventListener("click",choicesFx.choiceSenderConsent);
+        this.choice2Consent.addEventListener("click",choicesFx.choiceSenderConsent);
+        this.choice3Consent.addEventListener("click",choicesFx.choiceSenderConsent);
+
+        this.choice1Give.addEventListener("click",choicesFx.choiceSenderGive);
+        this.choice2Give.addEventListener("click",choicesFx.choiceSenderGive);
+        this.choice3Give.addEventListener("click",choicesFx.choiceSenderGive);
+    },
+};
+
+choicesUI.buttonInit();
+choicesUI.choicesHide();
+choicesUI.choicesShow();
+choicesFx.choicesInit();
+function ConsensusButtonClickSomethingHappen(d) {
+    console.log(d);
+}
 
 
 // situationFrontEnd.updateSituation(situations[4]);
 
 
 // document.querySelector("#u890_text").children[0].textContent = "";
+
+//u995, 
