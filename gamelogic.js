@@ -18,11 +18,25 @@ const stats = {
         this.backing = this.backing + delta[3];
     },
 
+    limiter: function (n) {
+        if (n > 100) {
+            return 100;
+        } else if (n < 0) {
+            return 0;
+        } else {
+            return n;
+        }
+    },
+
     getStats: function () {
-        return [this.money, this.appeal, this.transparency, this.backing];
+        // let results = [];
+        // results.push(this.limiter(this.money));
+
+        // console.log(results);
+        return [this.limiter(this.money), this.limiter(this.appeal), this.limiter(this.transparency), this.limiter(this.backing)];
     },
 };
-
+let index = 0;
 let scenario = 0;
 try {
     scenario = JSON.parse(sessionStorage.scenario);
@@ -71,11 +85,11 @@ function scenarioSelect(number = 0) {
     }
 }
 
-function getRandomIntInclusive(min, max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min + 1) + min); //The maximum is inclusive and the minimum is inclusive
-}
+// function getRandomIntInclusive(min, max) {
+//     min = Math.ceil(min);
+//     max = Math.floor(max);
+//     return Math.floor(Math.random() * (max - min + 1) + min); //The maximum is inclusive and the minimum is inclusive
+// }
 
 function giveButton(whichOne) {
     //move the box accordingly
@@ -122,8 +136,6 @@ const playerNamesFrontEnd = {
     },
 };
 
-// playerNamesFrontEnd.updatePlayerNames(playerNames);
-
 const situationFrontEnd = {
     index: document.querySelector("#u850_text").children[0].children[0],
     progressBar: document.querySelector("#u853_div"),
@@ -160,7 +172,8 @@ const barsFrontEnd = {
     },
 
     updateBars: function () {
-        let lengths = this.numberToPixel * (stats.getStats());
+        let lengths = this.numberToPixel(stats.getStats());
+        console.log(lengths);
         this.money.style.width = lengths[0];
         this.appeal.style.width = lengths[1];
         this.transparency.style.width = lengths[2];
@@ -257,16 +270,15 @@ const moneyBox = {
     },
 
     _clickingGive: function () {
-        console.log("gimme the monies");
         moneyBox.clickingGive();
     },
-    
+
     clickingGive: function () {
         playerCoins[this.current] = playerCoins[this.current] - this.moneyCount;
-        moneySidebar.update();
-        this.moneyCount=1;
-        this.counterupdater();
-        moveThingsAlong();
+        this.moneyCount = 1;
+        this.boxDisplayFlag = false;
+        updateEverything();
+        moveThingsAlong(this.choiceTracker);
     },
 
     counterupdater: function () {
@@ -284,7 +296,7 @@ const moneyBox = {
             this.boxWrapper.style.left = (this.dx * this.choiceInt() - 277) + 'px';
         } else {
             this.boxWrapper.style.zIndex = '-1';
-            console.log("else");
+            // console.log("else");
         }
     },
 
@@ -295,10 +307,6 @@ const moneyBox = {
     },
 
 };
-
-moneyBox.initOnClick();
-moneyBox.boxDisplay();
-moneySidebar.update();
 
 const choicesUI = {
     choice1: document.querySelector("#u987"),
@@ -341,8 +349,8 @@ const choicesFx = {
     choice3Give: document.querySelector("#u1022"),
 
     choiceSenderConsent: function () {
-        // console.log(this.attributes['data-label'].textContent);
-        ConsensusButtonClickSomethingHappen(this.attributes['data-label'].textContent);
+        moneyBox.boxDisplayFlag = false;
+        moveThingsAlong(this.attributes['data-label'].textContent);
     },
 
     choiceSenderGive: function () {
@@ -360,18 +368,50 @@ const choicesFx = {
     },
 };
 
-choicesUI.buttonInit();
+//switch them out or comment out to get to production game state
 choicesUI.choicesHide();
 choicesUI.choicesShow();
-choicesFx.choicesInit();
 
-function ConsensusButtonClickSomethingHappen(d) {
-    console.log(d);
+
+function initEverything() {
+    scenarioSelect();
+    playerNamesFrontEnd.updatePlayerNames(playerNames);
+    situationFrontEnd.updateSituation(situations[index]);
+    barsFrontEnd.updateBars();
+    moneySidebar.update();
+    moneyBox.initOnClick();
+
+    choicesUI.buttonInit();
+    choicesFx.choicesInit();
+
+    updateEverything();
 }
 
-function moveThingsAlong() {
+function updateEverything() {
+    console.log("update everythin!")
+    moneyBox.counterupdater();
+    moneySidebar.update();
+    moneyBox.boxDisplay();
+    barsFrontEnd.updateBars();
+}
+
+
+function moveThingsAlong(d) {
+    console.log(situations[index][d]);
+
+    stats.updateStats(situations[index][d]);
+    updateEverything();
+
+    //add code here to check for after scenario 6 and 12
+    if (index<11){
+        index++;
+    }
+
+    situationFrontEnd.updateSituation(situations[index]);
 
 }
+
+initEverything();
 // situationFrontEnd.updateSituation(situations[4]);
 
 
