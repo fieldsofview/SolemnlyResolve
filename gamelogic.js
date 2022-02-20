@@ -17,7 +17,7 @@ try {
     scenario = 0;
     console.log(e);
 }
-console.log(`Scenario from memory is `+scenario);
+console.log(`Scenario from memory is ` + scenario);
 
 let playerNames;
 try {
@@ -31,16 +31,12 @@ try {
     };
     console.log(e);
 }
-console.log(playerNames );
+console.log(playerNames);
 // -------------------------
 // To update the text inside span
 // $("#id")[0].textContent="";
 
 // ------------------------
-function loadMagic(){
-    const centralImage = document.querySelector("#u1057_img");
-    centralImage.src = "/images/situations/1.png";
-}
 
 function scenarioSelect(number = 0) {
     switch (number) {
@@ -57,7 +53,7 @@ function scenarioSelect(number = 0) {
             setStats([50, 25, 25, 75]);
             break;
         default:
-            setStats([50,50,50,50]);
+            setStats([50, 50, 50, 50]);
             break;
     }
 }
@@ -82,7 +78,7 @@ function getRandomIntInclusive(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min); //The maximum is inclusive and the minimum is inclusive
 }
 
-function giveButton(whichOne){
+function giveButton(whichOne) {
     //move the box accordingly
     //make the box visible
     //have the blue bar on the first name
@@ -90,14 +86,46 @@ function giveButton(whichOne){
     //Set the current CHOICE-GIVE VARIABLE to a/b/c
 
     //On click of the names
-        //move blue bar to name or appear-disappear using classes to define positions
-        //set GIVER-NAME VARIABLE TO NAME
-    
+    //move blue bar to name or appear-disappear using classes to define positions
+    //set GIVER-NAME VARIABLE TO NAME
+
     //ON UP-DOWN
-        //CHANGE VALUE ON DISPLAY
-        //CHANGE VALUE ON VARIABLE
-    
+    //CHANGE VALUE ON DISPLAY
+    //CHANGE VALUE ON VARIABLE
+
     //ON PRESSING GIVE
-        //Pass CHOICE, NAME, AMOUNT variable to main game back state
+    //Pass CHOICE, NAME, AMOUNT variable to main game back state
 
 }
+
+
+const centralImage = document.querySelector("#u1057_img");
+centralImage.src = "/images/situations/1.png";
+
+const playerNamesBoxes = {
+    A: document.querySelector("#u890_text").children[0],
+    B: document.querySelector("#u925_text").children[0],
+    C: document.querySelector("#u938_text").children[0],
+    D: document.querySelector("#u963_text").children[0]
+};
+
+const situationFrontEnd = {
+    index: document.querySelector("#u850_text").children[0],
+    progressBar : '',
+    text: document.querySelector("#u851_text").children[0],
+    choice1: document.querySelector("#u989_text").children[0],
+    choice2: document.querySelector("#u1003_text").children[0],
+    choice3: document.querySelector("#u1017_text").children[0],
+
+    updateSituation: function(s) {
+        this.index.textContent = 'SITUATION '+ (s.index+1);
+        this.text.textContent = s.text;
+        this.choice1.textContent = s.choice1;
+        this.choice2.textContent = s.choice2;
+        this.choice3.textContent = s.choice3;
+    },
+};
+
+
+
+// document.querySelector("#u890_text").children[0].textContent = "";
