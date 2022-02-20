@@ -1,5 +1,5 @@
-const scenario1 = {
-    index: 1,
+const task0 = {
+    index: 0,
     text: `Parliament has passed a new law, which states that village communities shall be responsible for protection of biodiversity in the forest. The law also gives village communities the right to convert forest villages into revenue villages, allowing construction, sale and commercial activity.`,
     choice1: `Conservationists argue against the law stating that such a move will only favour influential village communities and also lead to degradation of forest land over time.
 
@@ -16,8 +16,8 @@ const scenario1 = {
     preamble: [0,0,0,0,0,0,0,0,0,0,0,0,0,0]
 };
 
-const scenario2 = {
-    index: 2,
+const task1 = {
+    index: 1,
     text: `The editor of a popular news channel was fired for tweeting about the presence of hate speech on TV news. The management claimed it violated their internal rule against commenting on the channel's affairs. The editor did not explicitly name any specific channel.`,
     choice1: `The TV Editors' Guild argues that editors should be able to express any opinion on social media as long as their speech is protected by the Constitution.
 
@@ -34,8 +34,8 @@ const scenario2 = {
     preamble: [0,0,0,0,0,0,0,0,0,0,0,0,0,0]
 };
 
-const scenario3 = {
-    index: 3,
+const task2 = {
+    index: 2,
     text: `State government has planned to make space for the extension of an oil refinery. It has allocated adjoining government-owned land for this, evicting slum dwellers who had been staying there for the last 3 years. Government says they will be rehabilitated.`,
     choice1: `The state government argues that the expansion is critical to meet the state's energy needs and will also generate many livelihood opportunities.
 
@@ -52,8 +52,8 @@ const scenario3 = {
     preamble: [0,0,0,0,0,0,0,0,0,0,0,0,0,0]
 };
 
-const scenario4 = {
-    index: 4,
+const task3 = {
+    index: 3,
     text: `City metro authorities plan to tunnel under a Parsi Fire temple. Entrance to the temple will be restricted during the construction period. Government has offered to relocate the temple and pay for its reconstruction.`,
     choice1: `Metro authories argue that the tunnel is important to improve public transport accessibility for people in nearby areas. They state that plans were already finalised 4 years ago.
 
@@ -70,8 +70,8 @@ const scenario4 = {
     preamble: [0,0,0,0,0,0,0,0,0,0,0,0,0,0]
 };
 
-const scenario5 = {
-    index: 5,
+const task4 = {
+    index: 4,
     text: `Based on complaints of nuisance by traders, street vendors in an old neighbourhood have been evicted by the city Development Authority. The area will now be used for widening its roads.`,
     choice1: `Street vendors and their representative associations argue that they have the right to practice and earn their livelihoods. Evicting them will destroy their incomes. They argue that footfalls in the area will also reduce since many shoppers visit the vendors who have working there for over 20 years.
 
@@ -88,8 +88,8 @@ const scenario5 = {
     preamble: [0,0,0,0,0,0,0,0,0,0,0,0,0,0]
 };
 
-const scenario6 = {
-    index: 6,
+const task5 = {
+    index: 5,
     text: `The state government has mandated an increase in the minimum wages to workers across all skill levels. Soon after this increase, garment factory owners have let go of workers to keep costs down, leading to mass lay-offs and retentions only through temporary contracts. The workers are protesting on the streets.`,
     choice1: `The state government argues that revisions in the minimum wage are routinely done. It clarifies that the increase shall only apply to permanent employees and states that any disputes or concerns must be resolved through peaceful discussion.
 
@@ -106,8 +106,8 @@ const scenario6 = {
     preamble: [0,0,0,0,0,0,0,0,0,0,0,0,0,0]
 };
 
-const scenario7 = {
-    index: 7,
+const task6 = {
+    index: 6,
     text: `A TV news channel recently conducted a 'sting operation' on a senior government official. The report uncovered their role in a financial scam concerning taxpayer money, following which they were fired from service. A commission has been set up to investigate fraud by any other officials in the ministry. Soon after that, compromising pictures of the official and her husband in their home were leaked through various online media. The MIB has ordered the channel's license to be revoked stating privacy violations are unconstitutional.`,
     choice1: `The TV news channel argues that it was unaware of the methods used by the journalists while reporting on the story. It states the journalists should face disciplinary action but the channel should not be taken off air, as this will be a major violation of press freedom. It adds that the government is only acting them after the reports of corruption in a Union Ministry.
 
@@ -124,8 +124,8 @@ const scenario7 = {
     preamble: [0,0,0,0,0,0,0,0,0,0,0,0,0,0]
 };
 
-const scenario8 = {
-    index: 8,
+const task7 = {
+    index: 7,
     text: `Due to poor air quality levels across North India, the Supreme Court has placed a countrywide ban on all firecrackers ahead of Diwali, a religious festival that is usually celebrated with fireworks. Multiple protests are being staged in different states as the government hesitates on implementing the move.`,
     choice1: `The Centre argues that such a move will heavily impact small and medium businesses, which are the core manufacturers of fireworks. A blanket ban will cause them to lose their livelihoods.
 
@@ -142,8 +142,8 @@ const scenario8 = {
     preamble: [0,0,0,0,0,0,0,0,0,0,0,0,0,0]
 };
 
-const scenario9 = {
-    index: 9,
+const task8 = {
+    index: 8,
     text: `One state government has created Working Holiday Zones, areas in which all manufacturing establishments will be exempted from implementing wage-related laws for a three-year period. They will be required to constitute committees to deal with complaints of sexual harassment and other grievances related to non-wage benefits. Workers across the state have gone on strike in response to the move.`,
     choice1: `The state government argues that this will improve manufacturing output in the state and increase the employment rates of educated youth manifold. The concentration of manufacturing units will also make it easier to manage industrial waste and environmental damage.
 
@@ -160,8 +160,8 @@ const scenario9 = {
     preamble: [0,0,0,0,0,0,0,0,0,0,0,0,0,0]
 };
 
-const scenario10 = {
-    index: 10,
+const task9 = {
+    index: 9,
     text: `A government order requires all news media outlets with less than 50 exclusive reporters to get their content vetted by the Ministry of Information and Broadcasting before publication. Those not complying will face prosecution, including personal liability. Journalists and media houses claim the move interferes with the freedom of the press and threaten to cease publication entirely.`,
     choice1: `The Central Government argues that outlets with few reporters have no on-ground presence and therefore might contribute to spreading misinformation, whether intentionally or otherwise. The vetting process will help them gain credibility and be mentored for future growth.
 
@@ -178,8 +178,8 @@ const scenario10 = {
     preamble: [0,0,0,0,0,0,0,0,0,0,0,0,0,0]
 };
 
-const scenario11 = {
-    index: 11,
+const task10 = {
+    index: 10,
     text: `Leaders of the ruling party have introduced a Constitution Amendment Bill in Parliament to prohibit inter-religious conversions. Recently, newspapers have reported a number of incidents concerning the conversions of people belonging to the majority religion.`,
     choice1: `Members of the ruling party argue that the Bill intends to protect every person's right to their religious beliefs. It is necessary to send a message that the State will not tolerate any aggressive propagation of religion.
 
@@ -196,8 +196,8 @@ const scenario11 = {
     preamble: [0,0,0,0,0,0,0,0,0,0,0,0,0,0]
 };
 
-const scenario12 = {
-    index: 12,
+const task11 = {
+    index: 11,
     text: `The Central Goverment has amended the National Building Code to mandate gender neutral bathrooms in all upcoming public and private establishments. It has notified all metropolitan development authorities to adopt this mandate with immediate effect in granting building permissions.`,
     choice1: `The Centre argues that there is an urgent need to build for inclusivity in all upcoming infrastructure. It states that the additional economic costs are necessary to effectuate the social benefits of practising gender justice.
 
@@ -214,3 +214,4 @@ const scenario12 = {
     preamble: [0,0,0,0,0,0,0,0,0,0,0,0,0,0]
 };
 
+const situations = [task0,task1,task2,task3,task4,task5,task6,task7,task8,task9,task10,task11];

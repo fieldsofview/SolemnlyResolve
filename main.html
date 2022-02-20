@@ -45,9 +45,10 @@
       $axure.utils.getOtherPath = function() { return 'resources/Other.html'; };
       $axure.utils.getReloadPath = function() { return 'resources/reload.html'; };
     </script>
-    <script src="gamelogic.js"></script>
+     <script src="/data.js"></script>
+    <script src="/gamelogic.js"></script>
   </head>
-  <body>
+  <body onload="loadMagic()">
     <div id="base" class="">
 
       <!-- give token (Group) -->
