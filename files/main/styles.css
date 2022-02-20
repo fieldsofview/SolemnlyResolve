@@ -6571,12 +6571,14 @@
   visibility:hidden;
 }
 #u1029 {
+  /* z-index: '-1'; */
   border-width:0px;
   position:absolute;
-  left:0px;
+  left:-277px;
   top:0px;
   width:0px;
   height:0px;
+ 
 }
 #u1030_div {
   border-width:0px;

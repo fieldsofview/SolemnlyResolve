@@ -191,6 +191,7 @@ const moneySidebar = {
 const moneyBox = {
     whiteShape: 'images/main/rectangle_234_u1031.svg',
     blueShape: 'images/main/rectangle_235_u1032.svg',
+    boxWrapper: document.querySelector("#u1029"),
     Name0: document.querySelector("#Name0"),
     Name1: document.querySelector("#Name1"),
     Name2: document.querySelector("#Name2"),
@@ -198,6 +199,11 @@ const moneyBox = {
     counterUI: document.querySelector("#u1043_text").children[0].children[0],
     up: document.querySelector("#u1045"),
     down: document.querySelector("#u1044"),
+    giveButton: document.querySelector("#u1046"),
+
+    dx: 295,
+    choiceTracker: 'delta1',
+    boxDisplayFlag: false,
 
     current: 'Name1',
     moneyCount: 1,
@@ -251,9 +257,32 @@ const moneyBox = {
     counterupdater: function () {
         this.counterUI.textContent = this.moneyCount;
     },
+
+    choiceInt: function () {
+        return parseInt(this.choiceTracker.slice(-1));
+    },
+
+    boxDisplay: function () {
+        if (this.boxDisplayFlag) {
+            this.boxWrapper.style.zIndex = '9999';
+            console.log((this.dx * this.choiceInt() - 277) + 'px');
+            this.boxWrapper.style.left = (this.dx * this.choiceInt() - 277) + 'px';
+        } else {
+            this.boxWrapper.style.zIndex = '-1';
+            console.log("else");
+        }
+    },
+
+    actionTime: function (t) {
+        this.choiceTracker = t;
+        this.boxDisplayFlag = !this.boxDisplayFlag;
+        this.boxDisplay();
+    },
+
 };
 
 moneyBox.initOnClick();
+moneyBox.boxDisplay();
 moneySidebar.update();
 
 const choicesUI = {
@@ -301,18 +330,18 @@ const choicesFx = {
         ConsensusButtonClickSomethingHappen(this.attributes['data-label'].textContent);
     },
 
-    choiceSenderGive: function(){
-        // moneyBox.actionTime(this.attributes['data-label'].textContent);
+    choiceSenderGive: function () {
+        moneyBox.actionTime(this.attributes['data-label'].textContent);
     },
 
-    choicesInit: function(){
-        this.choice1Consent.addEventListener("click",choicesFx.choiceSenderConsent);
-        this.choice2Consent.addEventListener("click",choicesFx.choiceSenderConsent);
-        this.choice3Consent.addEventListener("click",choicesFx.choiceSenderConsent);
+    choicesInit: function () {
+        this.choice1Consent.addEventListener("click", choicesFx.choiceSenderConsent);
+        this.choice2Consent.addEventListener("click", choicesFx.choiceSenderConsent);
+        this.choice3Consent.addEventListener("click", choicesFx.choiceSenderConsent);
 
-        this.choice1Give.addEventListener("click",choicesFx.choiceSenderGive);
-        this.choice2Give.addEventListener("click",choicesFx.choiceSenderGive);
-        this.choice3Give.addEventListener("click",choicesFx.choiceSenderGive);
+        this.choice1Give.addEventListener("click", choicesFx.choiceSenderGive);
+        this.choice2Give.addEventListener("click", choicesFx.choiceSenderGive);
+        this.choice3Give.addEventListener("click", choicesFx.choiceSenderGive);
     },
 };
 
@@ -320,6 +349,7 @@ choicesUI.buttonInit();
 choicesUI.choicesHide();
 choicesUI.choicesShow();
 choicesFx.choicesInit();
+
 function ConsensusButtonClickSomethingHappen(d) {
     console.log(d);
 }
@@ -330,4 +360,6 @@ function ConsensusButtonClickSomethingHappen(d) {
 
 // document.querySelector("#u890_text").children[0].textContent = "";
 
-//u995, 
+// 18px (295) 313px 608
+
+// 277
