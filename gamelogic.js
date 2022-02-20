@@ -1,8 +1,8 @@
 const stats = {
-    money = 0,
-    appeal = 0,
-    transparency = 0,
-    backing = 0,
+    money: 0,
+    appeal: 0,
+    transparency: 0,
+    backing: 0,
 
     setStats: function (init = [0, 0, 0, 0]) {
         this.money = init[0];
@@ -21,13 +21,6 @@ const stats = {
     getStats: function () {
         return [this.money, this.appeal, this.transparency, this.backing];
     },
-};
-
-var playerCoins = {
-    A: 10,
-    B: 10,
-    C: 10,
-    D: 10
 };
 
 let scenario = 0;
@@ -113,12 +106,19 @@ const playerNamesFrontEnd = {
     B: document.querySelector("#u925_text").children[0].children[0],
     C: document.querySelector("#u938_text").children[0].children[0],
     D: document.querySelector("#u963_text").children[0].children[0],
-
+    boxA: document.querySelector("#u1035_text").children[0].children[0],
+    boxB: document.querySelector("#u1036_text").children[0].children[0],
+    boxC: document.querySelector("#u1037_text").children[0].children[0],
+    boxD: document.querySelector("#u1038_text").children[0].children[0],
     updatePlayerNames: function (p) {
         this.A.textContent = p.A;
         this.B.textContent = p.B;
         this.C.textContent = p.C;
         this.D.textContent = p.D;
+        this.boxA.textContent = p.A;
+        this.boxB.textContent = p.B;
+        this.boxC.textContent = p.C;
+        this.boxD.textContent = p.D;
     },
 };
 
@@ -167,6 +167,85 @@ const barsFrontEnd = {
         this.backing.style.width = lengths[3];
     },
 };
+
+let playerCoins = {
+    Name0: 10,
+    Name1: 10,
+    Name2: 10,
+    Name3: 10
+}
+
+const moneyBox = {
+    whiteShape: 'images/main/rectangle_234_u1031.svg',
+    blueShape: 'images/main/rectangle_235_u1032.svg',
+    Name0: document.querySelector("#Name0"),
+    Name1: document.querySelector("#Name1"),
+    Name2: document.querySelector("#Name2"),
+    Name3: document.querySelector("#Name3"),
+    counterUI: document.querySelector("#u1043_text").children[0].children[0],
+    up: document.querySelector("#u1045"),
+    down: document.querySelector("#u1044"),
+
+    current: 'Name1',
+    moneyCount: 1,
+
+    getBox: function (p) {
+        return moneyBox[p].children[0].children[0];
+    },
+
+    nameClickingBox: function () {
+        console.log(this.id);
+        moneyBox.nameClicking(this.id);
+    },
+
+    nameClicking: function (n) {
+        console.log(n);
+        if (this.current != n) {
+            moneyBox.getBox(n).src = moneyBox.blueShape;
+            this.getBox(this.current).src = this.whiteShape;
+            this.current = n;
+            moneyBox.moneyCount = 1;
+            moneyBox.counterupdater();
+        }
+    },
+
+    initOnClick: function () {
+        this.Name0.addEventListener("click", this.nameClickingBox);
+        this.Name1.addEventListener("click", this.nameClickingBox);
+        this.Name2.addEventListener("click", this.nameClickingBox);
+        this.Name3.addEventListener("click", this.nameClickingBox);
+
+        this.up.addEventListener("click", this.clickingUp);
+        this.down.addEventListener("click", this.clickingDown);
+    },
+
+    clickingUp: function () {
+        console.log("up and up and up");
+        if (moneyBox.moneyCount < playerCoins[moneyBox.current]) {
+            moneyBox.moneyCount++;
+        }
+        console.log(moneyBox.moneyCount);
+        moneyBox.counterupdater();
+    },
+
+    clickingDown: function () {
+        if (moneyBox.moneyCount > 1) {
+            moneyBox.moneyCount--;
+        }
+        moneyBox.counterupdater();
+    },
+
+    counterupdater: function () {
+        this.counterUI.textContent = this.moneyCount;
+    },
+};
+
+moneyBox.initOnClick();
+
+
+
+
+
 // situationFrontEnd.updateSituation(situations[4]);
 
 

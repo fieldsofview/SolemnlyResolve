@@ -9,6 +9,18 @@
   margin-right:auto;
   text-align:left;
 }
+
+.arrow {
+  /* opacity: 100%;
+  filter: grayscale(50%); */
+  cursor: pointer;
+}
+
+.arrow:hover,
+.arrow:focus{
+  filter: invert(5%) saturate(50%) ;
+}
+
 .form_sketch {
   border-color:transparent;
   background-color:transparent;
@@ -6784,7 +6796,7 @@
   font-weight:400;
   font-style:normal;
   font-size:14px;
-  color:#FFFFFF;
+  color:#000000;
 }
 #u1036 {
   border-width:0px;
@@ -6798,7 +6810,7 @@
   font-weight:400;
   font-style:normal;
   font-size:14px;
-  color:#FFFFFF;
+  color:#000000;
 }
 #u1036 .text {
   position:absolute;
@@ -6998,6 +7010,7 @@
   width:22px;
   height:12px;
   display:flex;
+  cursor: pointer;
 }
 #u1044 .text {
   position:absolute;
@@ -7028,6 +7041,7 @@
   width:22px;
   height:12px;
   display:flex;
+  cursor: pointer;
 }
 #u1045 .text {
   position:absolute;
