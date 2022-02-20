@@ -237,15 +237,15 @@ const moneyBox = {
         this.up.addEventListener("click", this.clickingUp);
         this.down.addEventListener("click", this.clickingDown);
 
-        // this.giveButton
+        this.giveButton.addEventListener("click", this._clickingGive);
     },
 
     clickingUp: function () {
-        console.log("up and up and up");
+        // console.log("up and up and up");
         if (moneyBox.moneyCount < playerCoins[moneyBox.current]) {
             moneyBox.moneyCount++;
         }
-        console.log(moneyBox.moneyCount);
+        // console.log(moneyBox.moneyCount);
         moneyBox.counterupdater();
     },
 
@@ -256,8 +256,17 @@ const moneyBox = {
         moneyBox.counterupdater();
     },
 
-    clickingGive: function(){
-
+    _clickingGive: function () {
+        console.log("gimme the monies");
+        moneyBox.clickingGive();
+    },
+    
+    clickingGive: function () {
+        playerCoins[this.current] = playerCoins[this.current] - this.moneyCount;
+        moneySidebar.update();
+        this.moneyCount=1;
+        this.counterupdater();
+        moveThingsAlong();
     },
 
     counterupdater: function () {
@@ -360,7 +369,7 @@ function ConsensusButtonClickSomethingHappen(d) {
     console.log(d);
 }
 
-function moveThingsAlong(){
+function moveThingsAlong() {
 
 }
 // situationFrontEnd.updateSituation(situations[4]);
