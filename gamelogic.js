@@ -236,6 +236,8 @@ const moneyBox = {
 
         this.up.addEventListener("click", this.clickingUp);
         this.down.addEventListener("click", this.clickingDown);
+
+        // this.giveButton
     },
 
     clickingUp: function () {
@@ -252,6 +254,10 @@ const moneyBox = {
             moneyBox.moneyCount--;
         }
         moneyBox.counterupdater();
+    },
+
+    clickingGive: function(){
+
     },
 
     counterupdater: function () {
@@ -354,7 +360,9 @@ function ConsensusButtonClickSomethingHappen(d) {
     console.log(d);
 }
 
+function moveThingsAlong(){
 
+}
 // situationFrontEnd.updateSituation(situations[4]);
 
 

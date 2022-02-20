@@ -267,6 +267,9 @@
   font-size:18px;
   color:#FFFFFF;
 }
+#u1065:hover {
+  cursor: pointer;
+}
 #u1065 .text {
   position:absolute;
   align-self:flex-start;
@@ -558,6 +561,61 @@
   text-transform:none;
   visibility:hidden;
 }
+#preambleContainer{
+  padding: 200px 180px 50px 180px;
+}
+
+#preambleTextRegular{
+  padding:2px;
+  color:rgb(0, 0, 0);
+  font-size:11px;
+  display:inline;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.2em;
+}
+#preambleTextBold{
+  padding:2px;
+  color:rgb(226, 11, 11);
+  font-size:11px;
+  display:inline;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.2em;
+}
+
+#preambleTextDeleted{
+  padding:2px;
+  color:rgb(160, 160, 160);
+  font-size:11px;
+  display:inline;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.2em;
+}
+
+#preambleTextRegularHidden{
+  padding:2px;
+  color:rgb(0, 0, 0);
+  font-size: 16px;
+  display:inline;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6em;
+}
+#preambleTextBoldHidden{
+  padding:2px;
+  color:rgb(226, 11, 11);
+  font-size:16px;
+  display:inline;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6em;
+}
+
+#preambleTextDeletedHidden{
+  padding:2px;
+  color:rgb(160, 160, 160);
+  font-size:16px;
+  display:inline;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6em;
+}
 #u1072_div {
   border-width:0px;
   position:absolute;
@@ -576,6 +634,15 @@
   -moz-box-shadow:none;
   -webkit-box-shadow:none;
   box-shadow:none;
+}
+#u1072_socialPreamble {
+  text-align: center;
+  height: 720px;
+  width: 720px;
+  box-sizing: border-box;
+  padding: 270px 170px 300px 170px;
+  background-image: url("../../images/preamble/socialPreambleBG.png");
+  background-size: 720px 720px;
 }
 #u1072 {
   border-width:0px;
