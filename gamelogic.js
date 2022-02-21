@@ -524,9 +524,10 @@ function moveThingsAlong(d) {
     overlayThings.changeImage(temp, true);
 
     let delta = 'delta' + d;
+    let deltaP= 'delta' + d + 'p';
     console.log(situations[gameVariables.index][delta]);
     stats.updateStats(situations[gameVariables.index][delta]);
-    stats.updatePreamble(situations[gameVariables.index].preamble);
+    stats.updatePreamble(situations[gameVariables.index][deltaP]);
 
     updateEverything();
 }

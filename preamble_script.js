@@ -1,4 +1,54 @@
 
+function today_date(){
+    const month_names = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+    var today = new Date();
+    var dd = today.getDate();
+    console.log(dd);
+    var mm = month_names[today.getMonth()]
+    var yyyy = today.getFullYear();
+
+    const st = [1, 21, 31];
+    const nd = [2, 22];
+    const rd = [3, 23];
+   
+    if(st.includes(dd)){
+        today = dd + 'st of ' + mm + ' ' + yyyy;
+    } else if(nd.includes(dd)){
+        today = dd + 'nd of '  + mm + ' ' + yyyy;
+    }else if(rd.includes(dd)){
+        today = dd + 'rd of ' + mm + ' ' + yyyy;
+    }else{
+        today = dd + 'th of ' + mm + ' ' + yyyy;
+    }
+    return today;
+}
+
+let playerNames;
+function getNames(){
+    try {
+        playerNames = JSON.parse(sessionStorage.playerNames);
+    } catch (e) {
+        playerNames = {
+            A: `Player 1`,
+            B: `Player 2`,
+            C: `Player 3`,
+            D: `Player 4`
+        };
+        console.log(e);
+    }
+    console.log(this.playerNames);
+}
+
+let conditions_array = [true, true, true, true, true, true, true, true, true, true, true, true, true, true];
+function getPreamble(){
+    try {
+        conditions_array = JSON.parse(sessionStorage.preamble);
+    } catch (e) {
+        conditions_array = [true, true, true, true, true, true, true, true, true, true, true, true, true, true];
+        console.log(e); 
+    }
+}
 
 let array = [
     ["We,", true, "regular"],
@@ -29,8 +79,9 @@ let array = [
     ["do HEREBY ADOPT, ENACT AND GIVE TO OURSELVES THIS CONSTITUTION.", true, "regular"],
 ];
 
-
-let conditions_array = [true, false, false, false, true, false, true, false, true, false, true, false, true, false];
+getNames();
+getPreamble();
+let names_array = [playerNames.A, playerNames.B,playerNames.C, playerNames.D, ];
 
 function preamble(elements){
     let wrapper = document.getElementById("u1072_div");
@@ -108,7 +159,9 @@ function preambleHidden(elements){
     }
 }
 
-function update_array(conditions){
+function update_array(conditions, names){
+    array[1][0] = names[0] + ", " + names[1] + ", " + names[2] + ", " + names[3]
+    array[24][0] = today_date();
     const pos = [3,4,5,8,9,10,12,13,14,15,16,19,20,22];
     for(let i = 0; i < pos.length; i++){
         let array_pos = pos[i];
@@ -119,7 +172,7 @@ function update_array(conditions){
     preambleHidden(array);
 }
 
-update_array(conditions_array);
+update_array(conditions_array, names_array);
 
 // on button click
 document.querySelector("#u1065").addEventListener("click", (e) => { 
@@ -131,7 +184,7 @@ document.querySelector("#u1065").addEventListener("click", (e) => {
         canvas.setAttribute('id', 'canvas');
         document.querySelector("#img-out").appendChild(canvas);
         var link = document.createElement('a');
-        link.download = 'filename.png';
+        link.download = 'preamble.png';
         link.href = document.getElementById('canvas').toDataURL()
         link.click();
         document.querySelector("#img-out").removeChild(canvas);
