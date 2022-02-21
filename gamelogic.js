@@ -23,7 +23,7 @@ const stats = {
     setPreamble: function (p) {
         p.forEach((e) => {
             this.preamble.push(e);
-            if(e>0){
+            if (e > 0) {
                 this.preambleOG.push(true);
             } else {
                 this.preambleOG.push(false);
@@ -33,19 +33,19 @@ const stats = {
 
     updatePreamble: function (p) {
         // this.preamble = this.preambleOG+parameter;
-        p.forEach((e,index) => {
+        p.forEach((e, index) => {
             this.preamble[index] = this.preamble[index] + e;
         });
     },
 
-    exportPreamble: function(){
+    exportPreamble: function () {
         let temp = [];
-        
-        this.preamble.forEach((e,index) => {
-            if(e>0){
+
+        this.preamble.forEach((e, index) => {
+            if (e > 0) {
                 temp.push(true);
-            } else if(e<0) {
-                temp.push (false);
+            } else if (e < 0) {
+                temp.push(false);
             } else {
                 temp.push(this.preambleOG[index]);
             }
@@ -207,10 +207,10 @@ const situationFrontEnd = {
     updateSituation: function (s) {
         this.index.textContent = 'SITUATION ' + (s.index + 1);
         this.progressBar.style.width = (15 + 48 * s.index) + 'px';
-        this.text.textContent = s.text;
-        this.choice1.textContent = s.choice1;
-        this.choice2.textContent = s.choice2;
-        this.choice3.textContent = s.choice3;
+        this.text.innerHTML = s.text;
+        this.choice1.innerHTML = s.choice1;
+        this.choice2.innerHTML = s.choice2;
+        this.choice3.innerHTML = s.choice3;
     },
 };
 
@@ -375,7 +375,7 @@ const choicesUI = {
     button: document.querySelector("#u1053"),
     display: false,
     buttonDisplay: true,
-    deltaTop:'-45px',
+    deltaTop: '-45px',
     newHeight: '367px',
 
     buttonInit: function () {
@@ -400,13 +400,13 @@ const choicesUI = {
         choicesUI.buttonDisplay = false;
     },
 
-    choicesMakeBigger: function(){
+    choicesMakeBigger: function () {
         this.choice1.style.top = this.deltaTop;
-        document.querySelector("#u988_div").style.height=this.newHeight;
+        document.querySelector("#u988_div").style.height = this.newHeight;
         this.choice2.style.top = this.deltaTop;
-        document.querySelector("#u1002_div").style.height=this.newHeight;
+        document.querySelector("#u1002_div").style.height = this.newHeight;
         this.choice3.style.top = this.deltaTop;
-        document.querySelector("#u1016_div").style.height=this.newHeight;
+        document.querySelector("#u1016_div").style.height = this.newHeight;
 
     }
 };
@@ -442,7 +442,7 @@ const choicesFx = {
         this.choice3Give.addEventListener("click", choicesFx.choiceSenderGive);
     },
 
-    moveButtonsDown: function(){
+    moveButtonsDown: function () {
         this.choice1Consent.style.top = this.deltaTop;
         this.choice1Give.style.top = this.deltaTop;
         this.choice2Consent.style.top = this.deltaTop;
@@ -524,7 +524,7 @@ function moveThingsAlong(d) {
     overlayThings.changeImage(temp, true);
 
     let delta = 'delta' + d;
-    let deltaP= 'delta' + d + 'p';
+    let deltaP = 'delta' + d + 'p';
     console.log(situations[gameVariables.index][delta]);
     stats.updateStats(situations[gameVariables.index][delta]);
     stats.updatePreamble(situations[gameVariables.index][deltaP]);
@@ -545,6 +545,22 @@ function nextScenario() {
     }
 
     situationFrontEnd.updateSituation(situations[gameVariables.index]);
+}
+
+//Things to add exit functionality for the game
+function endGameForcefully() {
+    window.location.href = './preamble.html';
+}
+
+document.onkeydown = keydown;
+
+function keydown(evt) {
+    if (!evt) evt = event;
+    if (evt.shiftKey && evt.keyCode == 69) { //SHIFT + E
+        if (confirm("Do you want to end the game?") == true) {
+            endGameForcefully();
+        }
+    }
 }
 
 initEverything();

@@ -293,12 +293,11 @@
         </div>
       </div>
       <form id="nameCollector">
-        <input type="text" id="u769" name="name1" placeholder="Enter Name" autofocus="true" maxlength="15"
+        <input type="text" id="u769" name="name1" placeholder="Enter Name" autofocus="true" maxlength="10"
           defaultValue="Player 1">
-        <input type="text" id="u776" name="name2" placeholder="Enter Name" maxlength="15" defaultValue="Player 2">
-        <input type="text" id="u779" name="name3" placeholder="Enter Name" maxlength="15" defaultValue="Player 3">
-        <input type="text" id="u782" name="name4" placeholder="Enter Name" maxlength="15" defaultValue="Player 4">
-        <input type="submit" value="Submit">
+        <input type="text" id="u776" name="name2" placeholder="Enter Name" maxlength="10" defaultValue="Player 2">
+        <input type="text" id="u779" name="name3" placeholder="Enter Name" maxlength="10" defaultValue="Player 3">
+        <input type="text" id="u782" name="name4" placeholder="Enter Name" maxlength="10" defaultValue="Player 4">
       </form>
       <!-- Group 438 (Group) -->
       <div id="u768" class="ax_default" data-label="Group 438" data-left="1002" data-top="121" data-width="228"
@@ -324,7 +323,7 @@
       <!-- Group (Group) -->
       <div id="u771" class="ax_default" data-label="Group" data-left="1004" data-top="620" data-width="226"
         data-height="39">
-        <a href="./main.html" id="submitNames">
+        <a id="submitNames" style="cursor: pointer;">
           <!-- Vector (Shape) -->
           <div id="u772" class="ax_default shape" data-label="Vector">
             <img id="u772_img" class="img " src="images/names/vector_u772.svg" />
@@ -426,15 +425,28 @@
       D: ``
     };
 
-    document.querySelector("#submitNames").addEventListener('click', nameCollector);
+    document.querySelector("#submitNames").addEventListener('click', checker);
+
+    function checker() {
+      nameCollector();
+    }
 
     function nameCollector() {
+      let flag = true;
       playerNames.A = form.elements[0].value;
       playerNames.B = form.elements[1].value;
       playerNames.C = form.elements[2].value;
       playerNames.D = form.elements[3].value;
-      sessionStorage.playerNames = JSON.stringify(playerNames);
-      console.log(playerNames);
+
+      flag = (playerNames.A == '' || playerNames.B == '' || playerNames.C == '' || playerNames.D == '')
+
+      if (!flag) {
+        sessionStorage.playerNames = JSON.stringify(playerNames);
+        console.log(playerNames);
+        window.location.href = './main.html';
+      } else {
+        alert("Please fill all names before proceeding");
+      }
     }
   </script>
 </body>

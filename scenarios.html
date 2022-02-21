@@ -213,10 +213,14 @@
     let scenario = 5;
 
     const scenarios = [
-      `Where is equality? Rich get richer, poor, poorer. Government weak.`,
-      `Government is Right and Government is Might.Poor growth, millions in distress.`,
-      `Buried in paper. High levels of transparency, accountability, and everything is slow - growth and government.`,
-      `"Money is might. Rich, richer, have the Government's ear. Everyone else faces a deaf wall."`
+      `Where is equality? 
+Rich get richer,<br> poor, poorer. Government weak.`,
+      `Government is right and government is might. Poor growth, millions in distress.`,
+      `Buried in paper. High levels of transparency, accountability, and everything is slow - growth & government.`,
+      `Money is might. <br>
+Rich, richer, have 
+the government's ear. Everyone else faces <br>a deaf wall.
+ `
     ];
 
     function wipeImages() {
@@ -252,8 +256,8 @@
 
       wipeImages();
       images[number].style = "display:block";
-
-      document.querySelector("#scenarioBox").textContent = scenarios[number];
+      document.querySelector("#scenarioBox").style.fontWeight = '500';
+      document.querySelector("#scenarioBox").innerHTML = scenarios[number];
     }
 
     function confirmScenario() {
