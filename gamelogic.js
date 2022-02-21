@@ -375,6 +375,8 @@ const choicesUI = {
     button: document.querySelector("#u1053"),
     display: false,
     buttonDisplay: true,
+    deltaTop:'-45px',
+    newHeight: '367px',
 
     buttonInit: function () {
         this.button.addEventListener('click', choicesUI.choicesShow);
@@ -396,6 +398,16 @@ const choicesUI = {
         choicesUI.display = true
         choicesUI.button.style.display = 'none'
         choicesUI.buttonDisplay = false;
+    },
+
+    choicesMakeBigger: function(){
+        this.choice1.style.top = this.deltaTop;
+        document.querySelector("#u988_div").style.height=this.newHeight;
+        this.choice2.style.top = this.deltaTop;
+        document.querySelector("#u1002_div").style.height=this.newHeight;
+        this.choice3.style.top = this.deltaTop;
+        document.querySelector("#u1016_div").style.height=this.newHeight;
+
     }
 };
 
@@ -407,6 +419,7 @@ const choicesFx = {
     choice1Give: document.querySelector("#u994"),
     choice2Give: document.querySelector("#u1008"),
     choice3Give: document.querySelector("#u1022"),
+    deltaTop: '60px',
 
     choiceSenderConsent: function () {
         moneyBox.boxDisplayFlag = false;
@@ -427,6 +440,15 @@ const choicesFx = {
         this.choice1Give.addEventListener("click", choicesFx.choiceSenderGive);
         this.choice2Give.addEventListener("click", choicesFx.choiceSenderGive);
         this.choice3Give.addEventListener("click", choicesFx.choiceSenderGive);
+    },
+
+    moveButtonsDown: function(){
+        this.choice1Consent.style.top = this.deltaTop;
+        this.choice1Give.style.top = this.deltaTop;
+        this.choice2Consent.style.top = this.deltaTop;
+        this.choice2Give.style.top = this.deltaTop;
+        this.choice3Consent.style.top = this.deltaTop;
+        this.choice3Give.style.top = this.deltaTop;
     },
 };
 
@@ -478,6 +500,8 @@ function initEverything() {
 
     overlayThings.init();
 
+    choicesUI.choicesMakeBigger();
+    choicesFx.moveButtonsDown();
     choicesUI.buttonInit();
     choicesFx.choicesInit();
 
