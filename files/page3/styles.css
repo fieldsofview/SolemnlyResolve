@@ -1,4 +1,13 @@
-﻿body {
+﻿@font-face {
+  font-family: "LEMON MILK Bold";
+  src: url("../../fonts/LEMONMILK-Bold.otf");
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+
+body {
   margin:0px;
   background-color:rgba(248, 248, 248, 0.9921568627450981);
   background-image:none;

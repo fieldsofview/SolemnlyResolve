@@ -1,7 +1,9 @@
 ﻿@font-face {
   font-family: "LEMON MILK Bold";
-  src: url("./fonts/LEMONMILK-Bold.otf");
+  src: url("../../fonts/LEMONMILK-Bold.otf");
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 
 body {
   margin:0px;
@@ -2128,9 +2130,9 @@ body {
   -moz-box-shadow:none;
   -webkit-box-shadow:none;
   box-shadow:none;
-  font-family:"Inter Oblique", "Inter", sans-serif;
+  font-family:  "Inter", sans-serif;
   font-weight:400;
-  font-style:oblique;
+  font-style:normal;
   font-size:18px;
   color:#FFFFFF;
   text-align:left;
@@ -2143,9 +2145,9 @@ body {
   width:5px;
   height:22px;
   display:flex;
-  font-family:"Inter Oblique", "Inter", sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight:400;
-  font-style:oblique;
+  font-style:normal;
   font-size:18px;
   color:#FFFFFF;
   text-align:left;

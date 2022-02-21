@@ -1,4 +1,9 @@
-﻿body {
+﻿@font-face {
+  font-family: "LEMON MILK Bold";
+  src: url("../../fonts/LEMONMILK-Bold.otf");
+}
+
+body {
   margin:0px;
   background-color:rgba(248, 248, 248, 1);
   background-image:none;
