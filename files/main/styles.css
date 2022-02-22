@@ -7404,3 +7404,37 @@ body {
   text-transform:none;
   visibility:hidden;
 }
+
+#preambleContainer{
+  padding: 260px 180px 50px 180px;
+  z-index: 9999;
+}
+
+#preambleTextRegular{
+  padding:2px;
+  color:rgb(0, 0, 0);
+  font-size:14px;
+  display:inline;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.8em;
+  z-index: 9999;
+}
+#preambleTextBold{
+  padding:2px;
+  color:rgb(226, 11, 11);
+  font-size:14px;
+  display:inline;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.2em;
+  z-index: 9999;
+}
+
+#preambleTextDeleted{
+  padding:2px;
+  color:rgb(160, 160, 160);
+  font-size:14px;
+  display:inline;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.2em;
+  z-index: 9999;
+}

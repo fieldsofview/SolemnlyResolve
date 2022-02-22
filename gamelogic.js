@@ -23,7 +23,7 @@ const stats = {
     setPreamble: function (p) {
         p.forEach((e) => {
             this.preamble.push(e);
-            if (e > 0) {
+            if (e >= 0) {
                 this.preambleOG.push(true);
             } else {
                 this.preambleOG.push(false);
@@ -461,6 +461,7 @@ const overlayThings = {
     imageBox: document.querySelector("#u1057_img"),
     bgLayer: document.querySelector("#u1057_img"),
     displayFlag: false,
+    repeatFlag: true,
 
     init: function () {
         this.imageBox.src = './images/situations/' + gameVariables.scenario + '.png';
@@ -470,9 +471,36 @@ const overlayThings = {
     },
 
     clickDisappear: function () {
+        overlayThings.clickDisappearMagic();
+    },
+    clickDisappearMagic(){
         overlayThings.displayFlag = false;
-        updateEverything();
-        nextScenario();
+        overlayThings.display();
+        
+        if(document.querySelector("#preambleContainer")){
+            document.querySelector("#preambleContainer").remove();
+        }
+
+        if (gameVariables.index == 0 && this.repeatFlag) {
+            nextScenario(!this.repeatFlag);
+            this.repeatFlag=false;
+        } 
+        // else if (gameVariables==1) {
+        //     nextScenario(false);
+        // }
+        else if (gameVariables.index == 5 && !this.repeatFlag) {
+            nextScenario(!this.repeatFlag);
+            preambleFunction();
+            this.repeatFlag=!this.repeatFlag;
+        } 
+        else if(gameVariables.index == 6 && this.repeatFlag){
+            nextScenario(false);
+            this.repeatFlag=!this.repeatFlag;
+        }
+        else {
+            updateEverything();
+            nextScenario(true);
+        }
     },
 
     display: function () {
@@ -505,6 +533,8 @@ function initEverything() {
     choicesUI.buttonInit();
     choicesFx.choicesInit();
 
+    preambleFunction();
+
     updateEverything();
 }
 
@@ -532,11 +562,13 @@ function moveThingsAlong(d) {
     updateEverything();
 }
 
-function nextScenario() {
+function nextScenario(t) {
     //add code here to check for after scenario 6 and 12
-    if (gameVariables.index < 11) {
+    if (t) {
         gameVariables.index++;
-    } else {
+        console.log(gameVariables.index);
+    }
+    if (gameVariables.index == 11) {
         //export thing to memory
         stats.exportPreamble();
 
@@ -563,12 +595,17 @@ function keydown(evt) {
     }
 }
 
+function preambleFunction() {
+    stats.exportPreamble();
+    // bringImageOverlayToTop();
+    update_array(conditions_array, names_array);
+
+    // Tarun insert your magic function over here
+
+
+    overlayThings.displayFlag = true;
+    overlayThings.changeImage('images/bluePreamble.png', true);
+    // overlayThings.changeImage('', true);
+}
+
 initEverything();
-// situationFrontEnd.updateSituation(situations[4]);
-
-
-// document.querySelector("#u890_text").children[0].textContent = "";
-
-// 18px (295) 313px 608
-
-// 277
