@@ -478,6 +478,7 @@ const overlayThings = {
         overlayThings.display();
         
         if(document.querySelector("#preambleContainer")){
+            removeAllChildNodes(document.querySelector("#preambleContainer"));
             document.querySelector("#preambleContainer").remove();
         }
 
@@ -609,3 +610,9 @@ function preambleFunction() {
 }
 
 initEverything();
+
+function removeAllChildNodes(parent) {
+    while (parent.firstChild) {
+        parent.removeChild(parent.firstChild);
+    }
+}
