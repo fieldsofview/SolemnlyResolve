@@ -261,7 +261,7 @@ the government's ear. Everyone else faces <br>a deaf wall.
     }
 
     function confirmScenario() {
-      console.log("Scenario Confirmed, number "+scenario);
+      console.log("Scenario Confirmed, number " + scenario);
       sessionStorage.scenario = JSON.stringify(scenario);
     }
 
@@ -286,6 +286,12 @@ the government's ear. Everyone else faces <br>a deaf wall.
 
     wipeImages();
     scenarioRandomiser0();
+
+    function removeRandomiserOption() {
+      randomiser.style.display='none';
+    }
+
+    removeRandomiserOption();
   </script>
 </body>
 

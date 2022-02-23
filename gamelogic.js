@@ -180,6 +180,14 @@ const playerNamesFrontEnd = {
     B: document.querySelector("#u925_text").children[0].children[0],
     C: document.querySelector("#u938_text").children[0].children[0],
     D: document.querySelector("#u963_text").children[0].children[0],
+    labelA: 'Professor Donor',
+    labelB: 'Export Trader',
+    labelC: 'New Collector',
+    labelD: 'Youth Leader',
+    label_A:'',
+    label_B:'',
+    label_C:'',
+    label_D:'',
     boxA: document.querySelector("#u1035_text").children[0].children[0],
     boxB: document.querySelector("#u1036_text").children[0].children[0],
     boxC: document.querySelector("#u1037_text").children[0].children[0],
@@ -193,7 +201,43 @@ const playerNamesFrontEnd = {
         this.boxB.textContent = p.B;
         this.boxC.textContent = p.C;
         this.boxD.textContent = p.D;
+        this.label_A = p.A;
+        this.label_B = p.B;
+        this.label_C = p.C;
+        this.label_D = p.D;
+        this.init();
     },
+
+    init: function(){
+        this.A.parentElement.parentElement.addEventListener("click",playerNamesFrontEnd.nameClickerDummyA); 
+        this.B.parentElement.parentElement.addEventListener("click",playerNamesFrontEnd.nameClickerDummyB);
+        this.C.parentElement.parentElement.addEventListener("click",playerNamesFrontEnd.nameClickerDummyC);
+        this.D.parentElement.parentElement.addEventListener("click",playerNamesFrontEnd.nameClickerDummyD);
+    },
+
+    nameClickerDummyA: function(){
+        playerNamesFrontEnd.nameClicker('A');
+    },
+
+    nameClickerDummyB: function(){
+        playerNamesFrontEnd.nameClicker('B');
+    },
+
+    nameClickerDummyC: function(){
+        playerNamesFrontEnd.nameClicker('C');
+    },
+
+    nameClickerDummyD: function(){
+        playerNamesFrontEnd.nameClicker('D');
+    },
+
+     nameClicker: function(t){
+        if (this[t].textContent === this['label_'+t]) {
+            this[t].textContent = this['label'+t];
+          } else {
+            this[t].textContent = this['label_'+t];
+          }
+     },
 };
 
 const situationFrontEnd = {
@@ -225,7 +269,7 @@ const barsFrontEnd = {
         let pix = [];
 
         p.forEach(e => {
-            pix.push((e * this.total / 100) + 'px');
+            pix.push((1+(e * this.total / 100)) + 'px');
         });
 
         return pix;
@@ -279,7 +323,7 @@ const moneyBox = {
     boxDisplayFlag: false,
 
     current: 'Name1',
-    moneyCount: 1,
+    moneyCount: 3,
 
     getBox: function (p) {
         return moneyBox[p].children[0].children[0];
@@ -296,7 +340,7 @@ const moneyBox = {
             moneyBox.getBox(n).src = moneyBox.blueShape;
             this.getBox(this.current).src = this.whiteShape;
             this.current = n;
-            moneyBox.moneyCount = 1;
+            moneyBox.moneyCount = Math.min(3,playerCoins[this.current]);
             moneyBox.counterupdater();
         }
     },
@@ -323,7 +367,7 @@ const moneyBox = {
     },
 
     clickingDown: function () {
-        if (moneyBox.moneyCount > 1) {
+        if (moneyBox.moneyCount > Math.min(3,playerCoins[this.current])) {
             moneyBox.moneyCount--;
         }
         moneyBox.counterupdater();
@@ -335,7 +379,7 @@ const moneyBox = {
 
     clickingGive: function () {
         playerCoins[this.current] = playerCoins[this.current] - this.moneyCount;
-        this.moneyCount = 1;
+        this.moneyCount = 3;
         this.boxDisplayFlag = false;
         console.log(this.choiceTracker);
         moveThingsAlong(this.choiceInt());
@@ -362,6 +406,8 @@ const moneyBox = {
 
     actionTime: function (t) {
         this.choiceTracker = t;
+        moneyBox.moneyCount = Math.min(3,playerCoins[this.current]);
+        moneyBox.counterupdater();
         this.boxDisplayFlag = !this.boxDisplayFlag;
         this.boxDisplay();
     },
@@ -459,7 +505,7 @@ choicesUI.choicesShow();
 const overlayThings = {
     imageGroup: document.querySelector("#imageGroup"),
     imageBox: document.querySelector("#u1057_img"),
-    bgLayer: document.querySelector("#u1057_img"),
+    bgLayer: document.querySelector("#u1056_img"),
     displayFlag: false,
     repeatFlag: true,
 
@@ -486,18 +532,16 @@ const overlayThings = {
             nextScenario(!this.repeatFlag);
             this.repeatFlag=false;
         } 
-        // else if (gameVariables==1) {
+//This commented out code is to include the preamble in the middle if needed
+        // else if (gameVariables.index == 5 && !this.repeatFlag) {
+        //     nextScenario(!this.repeatFlag);
+        //     preambleFunction();
+        //     this.repeatFlag=!this.repeatFlag;
+        // } 
+        // else if(gameVariables.index == 6 && this.repeatFlag){
         //     nextScenario(false);
+        //     this.repeatFlag=!this.repeatFlag;
         // }
-        else if (gameVariables.index == 5 && !this.repeatFlag) {
-            nextScenario(!this.repeatFlag);
-            preambleFunction();
-            this.repeatFlag=!this.repeatFlag;
-        } 
-        else if(gameVariables.index == 6 && this.repeatFlag){
-            nextScenario(false);
-            this.repeatFlag=!this.repeatFlag;
-        }
         else {
             updateEverything();
             nextScenario(true);
@@ -616,3 +660,13 @@ function removeAllChildNodes(parent) {
         parent.removeChild(parent.firstChild);
     }
 }
+
+
+// pink: wrong 62: 63 64 65           125 126 127            187 188 189
+                // 63 125 189   247px
+                    // 186px 
+                        //  61
+// 1px + 62*4*percentage
+// 62px 124px 186px 248
+// 63 125 187 249
+
