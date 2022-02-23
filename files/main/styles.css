@@ -234,6 +234,7 @@ body {
   -moz-box-shadow:none;
   -webkit-box-shadow:none;
   box-shadow:none;
+  transition: width 5s;
 }
 #u791 {
   border-width:0px;
@@ -842,6 +843,7 @@ body {
   -moz-box-shadow:none;
   -webkit-box-shadow:none;
   box-shadow:none;
+  transition: width 5s;
 }
 #u811 {
   border-width:0px;
@@ -1297,6 +1299,7 @@ body {
   width:126px;
   height:24px;
   display:flex;
+  transition: width 5s;
 }
 #u827 .text {
   position:absolute;
@@ -1621,6 +1624,7 @@ body {
   -moz-box-shadow:none;
   -webkit-box-shadow:none;
   box-shadow:none;
+  transition: width 5s;
 }
 #u839 {
   border-width:0px;
@@ -7380,6 +7384,8 @@ body {
   top:0px;
   width:986px;
   height:592px;
+  transform: scale(10%);
+  transition: transform 5s;
 }
 #u1057 {
   border-width:0px;
