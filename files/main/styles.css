@@ -234,7 +234,8 @@ body {
   -moz-box-shadow:none;
   -webkit-box-shadow:none;
   box-shadow:none;
-  transition: width 5s;
+  transition: width 1s;
+  transition-timing-function: ease-out;
 }
 #u791 {
   border-width:0px;
@@ -843,7 +844,8 @@ body {
   -moz-box-shadow:none;
   -webkit-box-shadow:none;
   box-shadow:none;
-  transition: width 5s;
+  transition: width 1s;
+  transition-timing-function: ease-out;
 }
 #u811 {
   border-width:0px;
@@ -1299,7 +1301,8 @@ body {
   width:126px;
   height:24px;
   display:flex;
-  transition: width 5s;
+  transition: width 1s;
+  transition-timing-function: ease-out;
 }
 #u827 .text {
   position:absolute;
@@ -1624,7 +1627,8 @@ body {
   -moz-box-shadow:none;
   -webkit-box-shadow:none;
   box-shadow:none;
-  transition: width 5s;
+  transition: width 1s;
+  transition-timing-function: ease-out;
 }
 #u839 {
   border-width:0px;
@@ -7384,7 +7388,7 @@ body {
   top:0px;
   width:986px;
   height:592px;
-  
+  /* These do the magc animation */
   transition: transform 5s;
   transform: scale(10%);
 }

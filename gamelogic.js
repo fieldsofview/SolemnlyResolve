@@ -499,8 +499,8 @@ const choicesFx = {
 };
 
 //switch them out or comment out to get to production game state
-choicesUI.choicesHide();
 choicesUI.choicesShow();
+choicesUI.choicesHide();
 
 const overlayThings = {
     imageGroup: document.querySelector("#imageGroup"),
@@ -546,6 +546,7 @@ const overlayThings = {
             updateEverything();
             nextScenario(true);
         }
+        choicesUI.choicesHide();
         barsFrontEnd.updateBars();
     },
 
@@ -554,8 +555,10 @@ const overlayThings = {
             this.imageGroup.style.display = 'block';
             // this.imageBox.style.display = 'none';
             overlayThings.imageBox.style.transform='scale(10%)'
+            container.style.transform = 'scale(10%)';
             // overlayThings.imageBox.style.transition='transform 6s'
             overlayThings.imageBox.style.transform='scale(100%)'
+            container.style.transform = 'scale(100%)';
 
         } else {
             this.imageGroup.style.display = 'none';
