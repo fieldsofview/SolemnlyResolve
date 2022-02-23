@@ -7384,8 +7384,9 @@ body {
   top:0px;
   width:986px;
   height:592px;
-  transform: scale(10%);
+  
   transition: transform 5s;
+  transform: scale(10%);
 }
 #u1057 {
   border-width:0px;

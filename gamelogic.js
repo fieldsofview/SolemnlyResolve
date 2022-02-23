@@ -546,20 +546,32 @@ const overlayThings = {
             updateEverything();
             nextScenario(true);
         }
+        barsFrontEnd.updateBars();
     },
 
     display: function () {
         if (this.displayFlag) {
             this.imageGroup.style.display = 'block';
+            // this.imageBox.style.display = 'none';
+            overlayThings.imageBox.style.transform='scale(10%)'
+            // overlayThings.imageBox.style.transition='transform 6s'
+            overlayThings.imageBox.style.transform='scale(100%)'
+
         } else {
             this.imageGroup.style.display = 'none';
+            overlayThings.imageBox.style.transform='scale(10%)'
         }
     },
 
     changeImage: function (src, flag) {
         this.imageBox.src = src;
         this.displayFlag = flag;
-        this.display();
+        if (this.imageBox.complete) {
+            alert("image loaded");
+            console.log("image loading fuction works");
+            this.display();
+          }
+
     },
 };
 
@@ -588,7 +600,7 @@ function updateEverything() {
     moneyBox.counterupdater();
     moneySidebar.update();
     moneyBox.boxDisplay();
-    barsFrontEnd.updateBars();
+    // barsFrontEnd.updateBars();
     overlayThings.display();
 }
 
