@@ -5,7 +5,7 @@ const stats = {
     backing: 0,
     preambleOG: [],
     preamble: [],
-    choicesArray:[],
+    choicesArray: [],
 
     setStats: function (init = [0, 0, 0, 0]) {
         this.money = init[0];
@@ -726,14 +726,29 @@ function winningFunction() {
 
 }
 
-function sendAnalytics(){
-let analyticsObject = {
-    scenario: gameVariables.scenario,
-    choices: stats.choicesArray,
-    preambleStats: stats.exportPreambleAnalytics(),
-};
+function sendAnalytics() {
+    let analyticsObject = {
+        scenario: gameVariables.scenario,
+        choices: stats.choicesArray,
+        preambleStats: stats.exportPreambleAnalytics(),
+    };
+    const gameId = (Math.random() + 1).toString(36).substring(7);
+    let now = new Date().toISOString();
+
     //Send analyticsObject
-    console.log(analyticsObject);
+    fetch(`https://frozen-forest-36963.herokuapp.com/save-parameters?gameId=${gameId}&ts=${now}`, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(analyticsObject)
+    }).then(function (res) {
+        console.log(res.status)
+    }).catch(function (err) {
+        console.log(err)
+    })
+
 }
 
 initEverything();
