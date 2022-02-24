@@ -7426,13 +7426,13 @@ body {
 }
 
 #preambleContainer{
-  padding: 260px 160px 50px 160px;
+  padding: 270px 190px 50px 190px;
 }
 
 #preambleTextRegular{
   padding:2px;
   color:#525154;
-  font-size:11px;
+  font-size:14px;
   display:inline;
   font-family: 'Belgrano', serif;
   line-height: 1.8em;
@@ -7440,7 +7440,7 @@ body {
 #preambleTextBold{
   padding:2px;
   color:#264877;
-  font-size:11px;
+  font-size:14px;
   display:inline;
   font-family: 'Belgrano', serif;
   line-height: 1.8em;
@@ -7449,7 +7449,7 @@ body {
 #preambleTextDeleted{
   padding:2px;
   color:#525154;
-  font-size:11px;
+  font-size:14px;
   display:inline;
   font-family: 'Belgrano', serif;
   line-height: 1.8em;

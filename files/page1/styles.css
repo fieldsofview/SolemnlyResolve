@@ -3,7 +3,11 @@
   src: url("../../fonts/LEMONMILK-Bold.otf");
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap');
+@font-face {
+  font-family: "Inter";
+  src: url("../../fonts/Inter-Regular.woff");
+}
+
 body {
   margin:0px;
   background-color:rgba(248, 248, 248, 1);
