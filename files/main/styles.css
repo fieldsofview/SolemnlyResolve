@@ -9,9 +9,10 @@
 }
 
 @font-face {
-  font-family: "LEMON MILK Bold";
-  src: url("../../fonts/LEMONMILK-Bold.otf");
+  font-family: "Belgrano";
+  src: url("../../fonts/Belgrano-Regular.ttf");
 }
+
 body {
   margin:0px;
   background-color:rgba(248, 248, 248, 1);
@@ -7425,35 +7426,31 @@ body {
 }
 
 #preambleContainer{
-  padding: 260px 180px 50px 180px;
-  z-index: 9999;
+  padding: 200px 160px 50px 160px;
 }
 
 #preambleTextRegular{
   padding:2px;
-  color:rgb(0, 0, 0);
-  font-size:14px;
+  color:#525154;
+  font-size:11px;
   display:inline;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Belgrano', serif;
   line-height: 1.8em;
-  z-index: 9999;
 }
 #preambleTextBold{
   padding:2px;
-  color:rgb(226, 11, 11);
-  font-size:14px;
+  color:#264877;
+  font-size:11px;
   display:inline;
-  font-family: Arial, Helvetica, sans-serif;
-  line-height: 1.2em;
-  z-index: 9999;
+  font-family: 'Belgrano', serif;
+  line-height: 1.8em;
 }
 
 #preambleTextDeleted{
   padding:2px;
-  color:rgb(160, 160, 160);
-  font-size:14px;
+  color:#525154;
+  font-size:11px;
   display:inline;
-  font-family: Arial, Helvetica, sans-serif;
-  line-height: 1.2em;
-  z-index: 9999;
+  font-family: 'Belgrano', serif;
+  line-height: 1.8em;
 }

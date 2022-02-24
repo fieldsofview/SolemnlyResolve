@@ -3,7 +3,15 @@
   src: url("../../fonts/LEMONMILK-Bold.otf");
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+@font-face {
+  font-family: "Inter";
+  src: url("../../fonts/Inter-Regular.woff");
+}
+
+@font-face {
+  font-family: "Belgrano";
+  src: url("../../fonts/Belgrano-Regular.ttf");
+}
 
 body {
   margin:0px;
@@ -202,6 +210,43 @@ body {
   text-transform:none;
   visibility:hidden;
 }
+#u1062_div_1 {
+  border-width:0px;
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:1280px;
+  height:30px;
+  background:inherit;
+  background-color:rgb(45, 83, 136);
+  border:none;
+  border-radius:0px;
+  -moz-box-shadow:none;
+  -webkit-box-shadow:none;
+  box-shadow:none;
+}
+#u1062_1 {
+  border-width:0px;
+  position:absolute;
+  left:0px;
+  top:690px;
+  width:1280px;
+  height:206px;
+  display:flex;
+}
+#u1062_1 .text {
+  position:absolute;
+  align-self:center;
+  padding:0px 0px 0px 0px;
+  box-sizing:border-box;
+  width:100%;
+}
+#u1062_text_1 {
+  border-width:0px;
+  word-wrap:break-word;
+  text-transform:none;
+  visibility:hidden;
+}
 #u1063 {
   border-width:0px;
   position:absolute;
@@ -314,7 +359,7 @@ body {
   border-width:0px;
   position:absolute;
   left:55px;
-  top:601px;
+  top:581px;
   width:296px;
   height:87px;
   display:flex;
@@ -361,8 +406,8 @@ body {
 #u1067 {
   border-width:0px;
   position:absolute;
-  left:465px;
-  top:577px;
+  left:340px;
+  top:565px;
   width:224px;
   height:10px;
   display:flex;
@@ -381,6 +426,102 @@ body {
   width:100%;
 }
 #u1067_text {
+  border-width:0px;
+  word-wrap:break-word;
+  text-transform:none;
+}
+#u1067_div_1 {
+  border-width:0px;
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:224px;
+  height:10px;
+  background:inherit;
+  background-color:rgba(255, 255, 255, 0);
+  border:none;
+  border-radius:0px;
+  -moz-box-shadow:none;
+  -webkit-box-shadow:none;
+  box-shadow:none;
+  font-family:"Inter", sans-serif;
+  font-weight:400;
+  font-style:normal;
+  font-size:10px;
+  color:#EFF4FA;
+  text-align:left;
+}
+#u1067_1 {
+  border-width:0px;
+  position:absolute;
+  left:590px;
+  top:565px;
+  width:224px;
+  height:10px;
+  display:flex;
+  font-family:"Inter", sans-serif;
+  font-weight:400;
+  font-style:normal;
+  font-size:10px;
+  color:#EFF4FA;
+  text-align:left;
+}
+#u1067_1 .text {
+  position:absolute;
+  align-self:flex-start;
+  padding:0px 0px 0px 0px;
+  box-sizing:border-box;
+  width:100%;
+}
+#u1067_text_1 {
+  border-width:0px;
+  word-wrap:break-word;
+  text-transform:none;
+}
+#u1067_div_2 {
+  border-width:0px;
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:224px;
+  height:10px;
+  background:inherit;
+  background-color:rgba(255, 255, 255, 0);
+  border:none;
+  border-radius:0px;
+  -moz-box-shadow:none;
+  -webkit-box-shadow:none;
+  box-shadow:none;
+  font-family:"Inter", sans-serif;
+  font-weight:400;
+  font-style:normal;
+  font-size:10px;
+  color:#EFF4FA;
+  text-align:left;
+}
+#u1067_2 {
+  border-width:0px;
+  position:absolute;
+  left:590px;
+  top:698px;
+  width:224px;
+  height:10px;
+  display:flex;
+  font-family:"Inter", sans-serif;
+  font-weight:400;
+  font-style:normal;
+  font-size:10px;
+  color:rgb(130, 168, 214);
+  text-align:left;
+}
+#u1067_2 .text {
+  position:absolute;
+  align-self:flex-start;
+  padding:0px 0px 0px 0px;
+  box-sizing:border-box;
+  width:100%;
+}
+#u1067_text_2 {
   border-width:0px;
   word-wrap:break-word;
   text-transform:none;
@@ -410,7 +551,7 @@ body {
   border-width:0px;
   position:absolute;
   left:55px;
-  top:556px;
+  top:536px;
   width:244px;
   height:31px;
   display:flex;
@@ -457,8 +598,8 @@ body {
 #u1069 {
   border-width:0px;
   position:absolute;
-  left:465px;
-  top:556px;
+  left:340px;
+  top:536px;
   width:213px;
   height:13px;
   display:flex;
@@ -477,6 +618,54 @@ body {
   width:100%;
 }
 #u1069_text {
+  border-width:0px;
+  word-wrap:break-word;
+  text-transform:none;
+}
+#u1069_div_1 {
+  border-width:0px;
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:213px;
+  height:13px;
+  background:inherit;
+  background-color:rgba(255, 255, 255, 0);
+  border:none;
+  border-radius:0px;
+  -moz-box-shadow:none;
+  -webkit-box-shadow:none;
+  box-shadow:none;
+  font-family:"Inter Semi Bold", "Inter", sans-serif;
+  font-weight:600;
+  font-style:normal;
+  font-size:12px;
+  color:#EFF4FA;
+  text-align:left;
+}
+#u1069_1 {
+  border-width:0px;
+  position:absolute;
+  left:590px;
+  top:536px;
+  width:213px;
+  height:13px;
+  display:flex;
+  font-family:"Inter Semi Bold", "Inter", sans-serif;
+  font-weight:600;
+  font-style:normal;
+  font-size:12px;
+  color:#EFF4FA;
+  text-align:left;
+}
+#u1069_1 .text {
+  position:absolute;
+  align-self:flex-start;
+  padding:0px 0px 0px 0px;
+  box-sizing:border-box;
+  width:100%;
+}
+#u1069_text_1 {
   border-width:0px;
   word-wrap:break-word;
   text-transform:none;
@@ -505,7 +694,7 @@ body {
   border-width:0px;
   position:absolute;
   left:975px;
-  top:659px;
+  top:639px;
   width:273px;
   height:17px;
   display:flex;
@@ -550,7 +739,7 @@ body {
   border-width:0px;
   position:absolute;
   left:1008px;
-  top:542px;
+  top:522px;
   width:207px;
   height:117px;
   display:flex;
@@ -569,59 +758,59 @@ body {
   visibility:hidden;
 }
 #preambleContainer{
-  padding: 200px 180px 50px 180px;
+  padding: 200px 160px 50px 160px;
 }
 
 #preambleTextRegular{
   padding:2px;
-  color:rgb(0, 0, 0);
+  color:#525154;
   font-size:11px;
   display:inline;
-  font-family: Arial, Helvetica, sans-serif;
-  line-height: 1.2em;
+  font-family: 'Belgrano', serif;
+  line-height: 1.8em;
 }
 #preambleTextBold{
   padding:2px;
-  color:rgb(226, 11, 11);
+  color:#264877;
   font-size:11px;
   display:inline;
-  font-family: Arial, Helvetica, sans-serif;
-  line-height: 1.2em;
+  font-family: 'Belgrano', serif;
+  line-height: 1.8em;
 }
 
 #preambleTextDeleted{
   padding:2px;
-  color:rgb(160, 160, 160);
+  color:#525154;
   font-size:11px;
   display:inline;
-  font-family: Arial, Helvetica, sans-serif;
-  line-height: 1.2em;
+  font-family: 'Belgrano', serif;
+  line-height: 1.8em;
 }
 
 #preambleTextRegularHidden{
   padding:2px;
-  color:rgb(0, 0, 0);
+  color:#525154;
   font-size: 16px;
   display:inline;
-  font-family: Arial, Helvetica, sans-serif;
-  line-height: 1.6em;
+  font-family: 'Belgrano', serif;
+  line-height: 1.5em;
 }
 #preambleTextBoldHidden{
   padding:2px;
-  color:rgb(226, 11, 11);
+  color:#264877;
   font-size:16px;
   display:inline;
-  font-family: Arial, Helvetica, sans-serif;
-  line-height: 1.6em;
+  font-family: 'Belgrano', serif;
+  line-height: 1.5em;
 }
 
 #preambleTextDeletedHidden{
   padding:2px;
-  color:rgb(160, 160, 160);
+  color:#525154;
   font-size:16px;
   display:inline;
-  font-family: Arial, Helvetica, sans-serif;
-  line-height: 1.6em;
+  font-family: 'Belgrano', serif;
+  line-height: 1.5em;
 }
 #u1072_div {
   border-width:0px;
