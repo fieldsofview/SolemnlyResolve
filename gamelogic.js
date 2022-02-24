@@ -180,14 +180,14 @@ const playerNamesFrontEnd = {
     B: document.querySelector("#u925_text").children[0].children[0],
     C: document.querySelector("#u938_text").children[0].children[0],
     D: document.querySelector("#u963_text").children[0].children[0],
-    labelA: 'Professor Donor',
-    labelB: 'Export Trader',
-    labelC: 'New Collector',
-    labelD: 'Youth Leader',
-    label_A:'',
-    label_B:'',
-    label_C:'',
-    label_D:'',
+    labelA: 'Mini Merchant',
+    labelB: 'Eco Prof',
+    labelC: 'Nodal DM',
+    labelD: 'Neo Neta',
+    label_A: '',
+    label_B: '',
+    label_C: '',
+    label_D: '',
     boxA: document.querySelector("#u1035_text").children[0].children[0],
     boxB: document.querySelector("#u1036_text").children[0].children[0],
     boxC: document.querySelector("#u1037_text").children[0].children[0],
@@ -208,36 +208,36 @@ const playerNamesFrontEnd = {
         this.init();
     },
 
-    init: function(){
-        this.A.parentElement.parentElement.addEventListener("click",playerNamesFrontEnd.nameClickerDummyA); 
-        this.B.parentElement.parentElement.addEventListener("click",playerNamesFrontEnd.nameClickerDummyB);
-        this.C.parentElement.parentElement.addEventListener("click",playerNamesFrontEnd.nameClickerDummyC);
-        this.D.parentElement.parentElement.addEventListener("click",playerNamesFrontEnd.nameClickerDummyD);
+    init: function () {
+        this.A.parentElement.parentElement.addEventListener("click", playerNamesFrontEnd.nameClickerDummyA);
+        this.B.parentElement.parentElement.addEventListener("click", playerNamesFrontEnd.nameClickerDummyB);
+        this.C.parentElement.parentElement.addEventListener("click", playerNamesFrontEnd.nameClickerDummyC);
+        this.D.parentElement.parentElement.addEventListener("click", playerNamesFrontEnd.nameClickerDummyD);
     },
 
-    nameClickerDummyA: function(){
+    nameClickerDummyA: function () {
         playerNamesFrontEnd.nameClicker('A');
     },
 
-    nameClickerDummyB: function(){
+    nameClickerDummyB: function () {
         playerNamesFrontEnd.nameClicker('B');
     },
 
-    nameClickerDummyC: function(){
+    nameClickerDummyC: function () {
         playerNamesFrontEnd.nameClicker('C');
     },
 
-    nameClickerDummyD: function(){
+    nameClickerDummyD: function () {
         playerNamesFrontEnd.nameClicker('D');
     },
 
-     nameClicker: function(t){
-        if (this[t].textContent === this['label_'+t]) {
-            this[t].textContent = this['label'+t];
-          } else {
-            this[t].textContent = this['label_'+t];
-          }
-     },
+    nameClicker: function (t) {
+        if (this[t].textContent === this['label_' + t]) {
+            this[t].textContent = this['label' + t];
+        } else {
+            this[t].textContent = this['label_' + t];
+        }
+    },
 };
 
 const situationFrontEnd = {
@@ -269,7 +269,7 @@ const barsFrontEnd = {
         let pix = [];
 
         p.forEach(e => {
-            pix.push((1+(e * this.total / 100)) + 'px');
+            pix.push((1 + (e * this.total / 100)) + 'px');
         });
 
         return pix;
@@ -340,7 +340,7 @@ const moneyBox = {
             moneyBox.getBox(n).src = moneyBox.blueShape;
             this.getBox(this.current).src = this.whiteShape;
             this.current = n;
-            moneyBox.moneyCount = Math.min(3,playerCoins[this.current]);
+            moneyBox.moneyCount = Math.min(3, playerCoins[this.current]);
             moneyBox.counterupdater();
         }
     },
@@ -367,7 +367,7 @@ const moneyBox = {
     },
 
     clickingDown: function () {
-        if (moneyBox.moneyCount > Math.min(3,playerCoins[this.current])) {
+        if (moneyBox.moneyCount > Math.min(3, playerCoins[this.current])) {
             moneyBox.moneyCount--;
         }
         moneyBox.counterupdater();
@@ -406,7 +406,7 @@ const moneyBox = {
 
     actionTime: function (t) {
         this.choiceTracker = t;
-        moneyBox.moneyCount = Math.min(3,playerCoins[this.current]);
+        moneyBox.moneyCount = Math.min(3, playerCoins[this.current]);
         moneyBox.counterupdater();
         this.boxDisplayFlag = !this.boxDisplayFlag;
         this.boxDisplay();
@@ -519,20 +519,20 @@ const overlayThings = {
     clickDisappear: function () {
         overlayThings.clickDisappearMagic();
     },
-    clickDisappearMagic(){
+    clickDisappearMagic() {
         overlayThings.displayFlag = false;
         overlayThings.display();
-        
-        if(document.querySelector("#preambleContainer")){
+
+        if (document.querySelector("#preambleContainer")) {
             removeAllChildNodes(document.querySelector("#preambleContainer"));
             document.querySelector("#preambleContainer").remove();
         }
 
         if (gameVariables.index == 0 && this.repeatFlag) {
             nextScenario(!this.repeatFlag);
-            this.repeatFlag=false;
-        } 
-//This commented out code is to include the preamble in the middle if needed
+            this.repeatFlag = false;
+        }
+        //This commented out code is to include the preamble in the middle if needed
         // else if (gameVariables.index == 5 && !this.repeatFlag) {
         //     nextScenario(!this.repeatFlag);
         //     preambleFunction();
@@ -554,15 +554,15 @@ const overlayThings = {
         if (this.displayFlag) {
             this.imageGroup.style.display = 'block';
             // this.imageBox.style.display = 'none';
-            overlayThings.imageBox.style.transform='scale(10%)'
+            overlayThings.imageBox.style.transform = 'scale(10%)'
             container.style.transform = 'scale(10%)';
             // overlayThings.imageBox.style.transition='transform 6s'
-            overlayThings.imageBox.style.transform='scale(100%)'
+            overlayThings.imageBox.style.transform = 'scale(100%)'
             container.style.transform = 'scale(100%)';
 
         } else {
             this.imageGroup.style.display = 'none';
-            overlayThings.imageBox.style.transform='scale(10%)'
+            overlayThings.imageBox.style.transform = 'scale(10%)'
         }
     },
 
@@ -573,7 +573,7 @@ const overlayThings = {
             alert("image loaded");
             console.log("image loading fuction works");
             this.display();
-          }
+        }
 
     },
 };
@@ -629,11 +629,9 @@ function nextScenario(t) {
         console.log(gameVariables.index);
     }
     if (gameVariables.index == 11) {
-        //export thing to memory
-        stats.exportPreamble();
-
+        winningFunction();
         //go to preamble page
-        window.location.href = './preamble.html';
+        // window.location.href = './preamble.html';
     }
 
     situationFrontEnd.updateSituation(situations[gameVariables.index]);
@@ -641,7 +639,7 @@ function nextScenario(t) {
 
 //Things to add exit functionality for the game
 function endGameForcefully() {
-    window.location.href = './preamble.html';
+    winningFunction();
 }
 
 document.onkeydown = keydown;
@@ -668,6 +666,46 @@ function preambleFunction() {
     // overlayThings.changeImage('', true);
 }
 
+function winningFunction() {
+    //export thing to memory
+    stats.exportPreamble();
+    choicesUI.choicesHide();
+
+    function checkStats(player, stat1, stat2) {
+        if (stats[stat1] >= 75 && stats[stat2] >= 50) {
+            winner.push(player);
+        }
+    }
+
+    let winner = [];
+    let winningString = '';
+    let endBtnText = document.querySelector("#u1055_text");
+    checkStats(playerNamesFrontEnd.label_A, 'money', 'backing');
+    checkStats(playerNamesFrontEnd.label_B, 'transparency', 'money');
+    checkStats(playerNamesFrontEnd.label_C, 'backing', 'appeal');
+    checkStats(playerNamesFrontEnd.label_D, 'appeal', 'transparency');
+
+    winningString = winner.join([separator = ', '])
+    console.log(winningString);
+
+    endBtnText.textContent = "Finish Game";
+    choicesUI.button.removeEventListener('click', choicesUI.choicesShow);
+    choicesUI.button.addEventListener('click', () => {
+        window.location.href = './preamble.html';
+    });
+
+    const textBox = document.querySelector("#u786");
+    if (winner.length == 0) {
+        textBox.children[0].children[0].textContent = 'NOBODY';
+        textBox.children[0].children[1].textContent = 'MET THEIR TARGETS 😔';
+    } else {
+        textBox.children[0].children[0].textContent = winningString;
+    }
+    textBox.style.display = 'block';
+
+
+}
+
 initEverything();
 
 function removeAllChildNodes(parent) {
@@ -678,10 +716,9 @@ function removeAllChildNodes(parent) {
 
 
 // pink: wrong 62: 63 64 65           125 126 127            187 188 189
-                // 63 125 189   247px
-                    // 186px 
-                        //  61
+// 63 125 189   247px
+// 186px 
+//  61
 // 1px + 62*4*percentage
 // 62px 124px 186px 248
 // 63 125 187 249
-
