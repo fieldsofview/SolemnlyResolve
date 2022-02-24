@@ -5,6 +5,7 @@ const stats = {
     backing: 0,
     preambleOG: [],
     preamble: [],
+    choicesArray:[],
 
     setStats: function (init = [0, 0, 0, 0]) {
         this.money = init[0];
@@ -50,8 +51,23 @@ const stats = {
                 temp.push(this.preambleOG[index]);
             }
         });
-
+        // analyticsObject.preambleStats=temp;
         sessionStorage.preamble = JSON.stringify(temp);
+    },
+
+    exportPreambleAnalytics: function () {
+        let temp = [];
+
+        this.preamble.forEach((e, index) => {
+            if (e > 0) {
+                temp.push(true);
+            } else if (e < 0) {
+                temp.push(false);
+            } else {
+                temp.push(this.preambleOG[index]);
+            }
+        });
+        return temp;
     },
 
     limiter: function (n) {
@@ -471,10 +487,13 @@ const choicesFx = {
         moneyBox.boxDisplayFlag = false;
         console.log(this.attributes['data-label'].textContent);
         let temp = parseInt(this.attributes['data-label'].textContent.slice(-1));
+        stats.choicesArray.push(temp);
         moveThingsAlong(temp);
     },
 
     choiceSenderGive: function () {
+        let temp = parseInt(this.attributes['data-label'].textContent.slice(-1));
+        stats.choicesArray.push(temp);
         moneyBox.actionTime(this.attributes['data-label'].textContent);
     },
 
@@ -688,7 +707,7 @@ function winningFunction() {
     winningString = winner.join([separator = ', '])
     console.log(winningString);
 
-    endBtnText.textContent = "Finish Game";
+    endBtnText.textContent = "See Results";
     choicesUI.button.removeEventListener('click', choicesUI.choicesShow);
     choicesUI.button.addEventListener('click', () => {
         window.location.href = './preamble.html';
@@ -703,7 +722,18 @@ function winningFunction() {
     }
     textBox.style.display = 'block';
 
+    sendAnalytics();
 
+}
+
+function sendAnalytics(){
+let analyticsObject = {
+    scenario: gameVariables.scenario,
+    choices: stats.choicesArray,
+    preambleStats: stats.exportPreambleAnalytics(),
+};
+    //Send analyticsObject
+    console.log(analyticsObject);
 }
 
 initEverything();
