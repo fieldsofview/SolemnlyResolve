@@ -588,11 +588,11 @@ const overlayThings = {
     changeImage: function (src, flag) {
         this.imageBox.src = src;
         this.displayFlag = flag;
-        if (this.imageBox.complete) {
-            alert("image loaded");
-            console.log("image loading fuction works");
-            this.display();
-        }
+        // if (this.imageBox.complete) {
+        //     alert("image loaded");
+        //     console.log("image loading fuction works");
+        //     this.display();
+        // }
 
     },
 };

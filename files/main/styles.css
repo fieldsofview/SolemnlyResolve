@@ -4,6 +4,11 @@
 }
 
 @font-face {
+  font-family: "LEMON MILK Medium";
+  src: url("../../fonts/LEMONMILK-Medium.otf");
+}
+
+@font-face {
   font-family: "Inter";
   src: url("../../fonts/Inter-Regular.woff");
 }
