@@ -11,7 +11,7 @@ const task0 = {
     Support their demand of implementing the law in its entirety.`,
     delta1: [-t, t, 0, -t],
     delta2: [-t, t, t, 0],
-    delta3: [t, 2*t, -t, -t],
+    delta3: [t, 2*t, -t, t],
     delta1p:[-1,0,0,1,1,0,0,0,-1,0,0,0,0,1],
     delta2p:[0, 0, 1, 1, 1, 0, 0, 0, 1, 1, 1, 0, 1, 1],
     delta3p:[0, 1, 0, 0, 0, 0, 0, 0, 0, -1, -1, 0, 0, -1]

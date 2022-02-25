@@ -8,6 +8,16 @@
   src: url("../../fonts/Inter-Regular.woff");
 }
 
+@font-face {
+  font-family: "Inter Medium";
+  src: url("../../fonts/Inter-Medium.woff");
+}
+
+@font-face {
+  font-family: "Inter Medium Oblique";
+  src: url("../../fonts/Inter-MediumItalic.woff");
+}
+
 body {
   margin:0px;
   background-color:rgba(248, 248, 248, 0.9921568627450981);
