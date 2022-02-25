@@ -704,7 +704,7 @@ body {
   border-width:0px;
   position:absolute;
   left:975px;
-  top:639px;
+  top:643px;
   width:273px;
   height:17px;
   display:flex;
@@ -749,7 +749,7 @@ body {
   border-width:0px;
   position:absolute;
   left:1008px;
-  top:522px;
+  top:528px;
   width:207px;
   height:117px;
   display:flex;
@@ -774,53 +774,55 @@ body {
 #preambleTextRegular{
   padding:2px;
   color:#525154;
-  font-size:11px;
+  font-size:10px;
   display:inline;
   font-family: 'Belgrano', serif;
-  line-height: 1.8em;
+  line-height: 1.2em;
 }
 #preambleTextBold{
   padding:2px;
   color:#264877;
-  font-size:11px;
+  font-size:10px;
   display:inline;
   font-family: 'Belgrano', serif;
-  line-height: 1.8em;
+  line-height: 1.2em;
 }
 
 #preambleTextDeleted{
   padding:2px;
   color:#525154;
-  font-size:11px;
+  font-size:10px;
   display:inline;
   font-family: 'Belgrano', serif;
-  line-height: 1.8em;
+  line-height: 1.2em;
+  text-decoration: line-through;
 }
 
 #preambleTextRegularHidden{
   padding:2px;
   color:#525154;
-  font-size: 16px;
+  font-size: 13px;
   display:inline;
   font-family: 'Belgrano', serif;
-  line-height: 1.5em;
+  line-height: 2em;
 }
 #preambleTextBoldHidden{
   padding:2px;
   color:#264877;
-  font-size:16px;
+  font-size:13px;
   display:inline;
   font-family: 'Belgrano', serif;
-  line-height: 1.5em;
+  line-height: 2em;
 }
 
 #preambleTextDeletedHidden{
   padding:2px;
   color:#525154;
-  font-size:16px;
+  font-size:13px;
   display:inline;
   font-family: 'Belgrano', serif;
-  line-height: 1.5em;
+  line-height: 2em;
+  text-decoration: line-through;
 }
 #u1072_div {
   border-width:0px;
@@ -846,7 +848,7 @@ body {
   height: 720px;
   width: 720px;
   box-sizing: border-box;
-  padding: 270px 170px 300px 170px;
+  padding: 280px 165px 300px 165px;
   background-image: url("../../images/preamble/socialPreambleBG.png");
   background-size: 720px 720px;
 }
