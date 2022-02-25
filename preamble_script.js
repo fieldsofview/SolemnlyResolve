@@ -1,5 +1,4 @@
-
-function today_date(){
+function today_date() {
     const month_names = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
     var today = new Date();
@@ -11,21 +10,22 @@ function today_date(){
     const st = [1, 21, 31];
     const nd = [2, 22];
     const rd = [3, 23];
-   
-    if(st.includes(dd)){
+
+    if (st.includes(dd)) {
         today = dd + 'st of ' + mm + ' ' + yyyy;
-    } else if(nd.includes(dd)){
-        today = dd + 'nd of '  + mm + ' ' + yyyy;
-    }else if(rd.includes(dd)){
+    } else if (nd.includes(dd)) {
+        today = dd + 'nd of ' + mm + ' ' + yyyy;
+    } else if (rd.includes(dd)) {
         today = dd + 'rd of ' + mm + ' ' + yyyy;
-    }else{
+    } else {
         today = dd + 'th of ' + mm + ' ' + yyyy;
     }
     return today;
 }
 
 let playerNames;
-function getNames(){
+
+function getNames() {
     try {
         playerNames = JSON.parse(sessionStorage.playerNames);
     } catch (e) {
@@ -41,12 +41,13 @@ function getNames(){
 }
 
 let conditions_array = [true, true, true, true, true, true, true, true, true, true, true, true, true, true];
-function getPreamble(){
+
+function getPreamble() {
     try {
         conditions_array = JSON.parse(sessionStorage.preamble);
     } catch (e) {
         conditions_array = [true, true, true, true, true, true, true, true, true, true, true, true, true, true];
-        console.log(e); 
+        console.log(e);
     }
 }
 
@@ -88,42 +89,42 @@ let array = [
 
 getNames();
 getPreamble();
-let names_array = [playerNames.A, playerNames.B,playerNames.C, playerNames.D, ];
+let names_array = [playerNames.A, playerNames.B, playerNames.C, playerNames.D, ];
 
-function preamble(elements){
+function preamble(elements) {
     let wrapper = document.getElementById("u1072_div");
     let container = document.createElement('div');
     container.setAttribute('id', 'preambleContainer');
-    for(let i = 0; i < elements.length; i++){
-        if(elements[i][1] == true){
-            if(elements[i][2] == "regular"){
+    for (let i = 0; i < elements.length; i++) {
+        if (elements[i][1] == true) {
+            if (elements[i][2] == "regular") {
                 let node = document.createElement("span");
                 let node_text = document.createTextNode(elements[i][0]);
                 node.setAttribute('id', 'preambleTextRegular');
                 node.appendChild(node_text);
                 container.appendChild(node);
                 wrapper.appendChild(container);
-            }else if(elements[i][2] == "bold"){
+            } else if (elements[i][2] == "bold") {
                 let node = document.createElement("span");
                 let node_text = document.createTextNode(elements[i][0]);
                 node.setAttribute('id', 'preambleTextBold');
                 node.appendChild(node_text);
                 container.appendChild(node);
                 wrapper.appendChild(container);
-            }else if(elements[i][2] == "break"){
+            } else if (elements[i][2] == "break") {
                 let node = document.createElement("br");
                 container.appendChild(node)
                 wrapper.appendChild(container);
             }
-        }else if(elements[i][1] == false){
-            if(elements[i][2] == "regular"){
+        } else if (elements[i][1] == false) {
+            if (elements[i][2] == "regular") {
                 let node = document.createElement("span");
                 let node_text = document.createTextNode(elements[i][0]);
                 node.setAttribute('id', 'preambleTextDeleted');
                 node.appendChild(node_text);
                 container.appendChild(node);
                 wrapper.appendChild(container);
-            }else if(elements[i][2] == "bold"){
+            } else if (elements[i][2] == "bold") {
                 let node = document.createElement("span")
                 let node_text = document.createTextNode(elements[i][0]);
                 node.setAttribute('id', 'preambleTextDeleted');
@@ -135,34 +136,34 @@ function preamble(elements){
     }
 }
 
-function preambleHidden(elements){
+function preambleHidden(elements) {
     let hiddenWrapper = document.getElementById("u1072_socialPreamble");
-    for(let i = 0; i < elements.length; i++){
-        if(elements[i][1] == true){
-            if(elements[i][2] == "regular"){
+    for (let i = 0; i < elements.length; i++) {
+        if (elements[i][1] == true) {
+            if (elements[i][2] == "regular") {
                 let node = document.createElement("span");
                 let node_text = document.createTextNode(elements[i][0]);
                 node.setAttribute('id', 'preambleTextRegularHidden');
                 node.appendChild(node_text);
                 hiddenWrapper.appendChild(node);
-            }else if(elements[i][2] == "bold"){
+            } else if (elements[i][2] == "bold") {
                 let node = document.createElement("span");
                 let node_text = document.createTextNode(elements[i][0]);
                 node.setAttribute('id', 'preambleTextBoldHidden');
                 node.appendChild(node_text);
                 hiddenWrapper.appendChild(node);
-            }else if(elements[i][2] == "break"){
+            } else if (elements[i][2] == "break") {
                 let node = document.createElement("br");
                 hiddenWrapper.appendChild(node);
             }
-        }else if(elements[i][1] == false){
-            if(elements[i][2] == "regular"){
+        } else if (elements[i][1] == false) {
+            if (elements[i][2] == "regular") {
                 let node = document.createElement("span");
                 let node_text = document.createTextNode(elements[i][0]);
                 node.setAttribute('id', 'preambleTextDeletedHidden');
                 node.appendChild(node_text);
                 hiddenWrapper.appendChild(node);
-            }else if(elements[i][2] == "bold"){
+            } else if (elements[i][2] == "bold") {
                 let node = document.createElement("span")
                 let node_text = document.createTextNode(elements[i][0]);
                 node.setAttribute('id', 'preambleTextDeletedHidden');
@@ -173,11 +174,11 @@ function preambleHidden(elements){
     }
 }
 
-function update_array(conditions, names){
+function update_array(conditions, names) {
     array[1][0] = names[0] + ", " + names[1] + ", " + names[2] + ", " + names[3]
     array[31][0] = today_date();
-    const pos = [4,5,6,12,13,14,17,18,19,20,21,25,26,29];
-    for(let i = 0; i < pos.length; i++){
+    const pos = [4, 5, 6, 12, 13, 14, 17, 18, 19, 20, 21, 25, 26, 29];
+    for (let i = 0; i < pos.length; i++) {
         let array_pos = pos[i];
         let value = conditions[i];
         array[array_pos][1] = value;
@@ -189,7 +190,7 @@ function update_array(conditions, names){
 update_array(conditions_array, names_array);
 
 // on button click
-document.querySelector("#u1065").addEventListener("click", (e) => { 
+document.querySelector("#u1065").addEventListener("click", (e) => {
     // convert #preamble to canvas
     html2canvas(document.querySelector("#u1072_socialPreamble"), {
         useCORS: true
@@ -204,4 +205,3 @@ document.querySelector("#u1065").addEventListener("click", (e) => {
         document.querySelector("#img-out").removeChild(canvas);
     });
 });
-  

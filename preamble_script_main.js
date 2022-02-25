@@ -54,26 +54,33 @@ function getPreamble(){
 let array = [
     ["We,", true, "regular"],
     ["Player 1, Player 2, Player 3, Player 4", true, "bold"],
-    ["having solemnly resolved to constitute India into a SOVERIEGN", true, "regular"],
+    ["having solemnly resolved to constitute India into a", true, "regular"],
+    ["SOVERIEGN", true, "regular"],
     ["SOCIALIST", true, "bold"],
     ["SECULAR", true, "bold"],
     ["DEMOCRATIC\n", true, "bold"],
-    ["REPUBLIC and to secure to all its citizens:\n", true, "regular"],
+    ["REPUBLIC", true, "regular"],
+    ["", true, "break"],
+    ["and to secure to all its citizens:", true, "regular"],
+    ["", true, "break"],
     ["JUSTICE,", true, "regular"],
     ["social,", true, "bold"],
     ["economic,", true, "bold"],
     ["political;", true, "bold"],
+    ["", true, "break"],
     ["LIBERTY of", true, "regular"],
     ["thought,", true, "bold"],
     ["expression,", true, "bold"],
     ["belief,", true, "bold"],
     ["faith,", true, "bold"],
     ["worship;\n", true, "bold"],
+    ["", true, "break"],
     ["EQUALITY", true, "regular"],
     ["of", true, "regular"],
     ["status,", true, "bold"],
     ["opportunity;", true, "bold"],
-    ["and to promote among them all", true, "regular"],
+    ["and to promote among all", true, "regular"],
+    ["", true, "break"],
     ["FRATERNITY assuring the dignity of the individual,", true, "bold"],
     ["the unity and integrity of the Nation; \nIN OUR CONSTITUENT ASSEMBLY this", true, "regular"],
     ["today's date", true, "bold"],
@@ -91,33 +98,37 @@ function preamble(elements){
     let wrapper = document.getElementById("u1057");
     
     container.setAttribute('id', 'preambleContainer');
-    for(let i = 0; i < elements.length; i++){
-        if(elements[i][1] == true){
-            if(elements[i][2] == "regular"){
-                let node = document.createElement("p");
+    for (let i = 0; i < elements.length; i++) {
+        if (elements[i][1] == true) {
+            if (elements[i][2] == "regular") {
+                let node = document.createElement("span");
                 let node_text = document.createTextNode(elements[i][0]);
                 node.setAttribute('id', 'preambleTextRegular');
                 node.appendChild(node_text);
                 container.appendChild(node);
                 wrapper.appendChild(container);
-            }else if(elements[i][2] == "bold"){
-                let node = document.createElement("b");
+            } else if (elements[i][2] == "bold") {
+                let node = document.createElement("span");
                 let node_text = document.createTextNode(elements[i][0]);
                 node.setAttribute('id', 'preambleTextBold');
                 node.appendChild(node_text);
                 container.appendChild(node);
                 wrapper.appendChild(container);
+            } else if (elements[i][2] == "break") {
+                let node = document.createElement("br");
+                container.appendChild(node)
+                wrapper.appendChild(container);
             }
-        }else if(elements[i][1] == false){
-            if(elements[i][2] == "regular"){
-                let node = document.createElement("del");
+        } else if (elements[i][1] == false) {
+            if (elements[i][2] == "regular") {
+                let node = document.createElement("span");
                 let node_text = document.createTextNode(elements[i][0]);
                 node.setAttribute('id', 'preambleTextDeleted');
                 node.appendChild(node_text);
                 container.appendChild(node);
                 wrapper.appendChild(container);
-            }else if(elements[i][2] == "bold"){
-                let node = document.createElement("del")
+            } else if (elements[i][2] == "bold") {
+                let node = document.createElement("span")
                 let node_text = document.createTextNode(elements[i][0]);
                 node.setAttribute('id', 'preambleTextDeleted');
                 node.appendChild(node_text);
@@ -133,7 +144,7 @@ function update_array(conditions, names){
     console.log(names);
     array[1][0] = names[0] + ", " + names[1] + ", " + names[2] + ", " + names[3]
     array[24][0] = today_date();
-    const pos = [3,4,5,8,9,10,12,13,14,15,16,19,20,22];
+    const pos = [4, 5, 6, 12, 13, 14, 17, 18, 19, 20, 21, 25, 26, 29];
     for(let i = 0; i < pos.length; i++){
         let array_pos = pos[i];
         let value = conditions[i];

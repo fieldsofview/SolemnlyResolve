@@ -804,7 +804,7 @@ body {
   font-size: 13px;
   display:inline;
   font-family: 'Belgrano', serif;
-  line-height: 2em;
+  line-height: 1.8em;
 }
 #preambleTextBoldHidden{
   padding:2px;
@@ -812,7 +812,8 @@ body {
   font-size:13px;
   display:inline;
   font-family: 'Belgrano', serif;
-  line-height: 2em;
+  font-weight: 500;
+  line-height: 1.8em;
 }
 
 #preambleTextDeletedHidden{
@@ -821,7 +822,7 @@ body {
   font-size:13px;
   display:inline;
   font-family: 'Belgrano', serif;
-  line-height: 2em;
+  line-height: 1.8em;
   text-decoration: line-through;
 }
 #u1072_div {
@@ -848,7 +849,7 @@ body {
   height: 720px;
   width: 720px;
   box-sizing: border-box;
-  padding: 280px 165px 300px 165px;
+  padding: 270px 160px 300px 160px;
   background-image: url("../../images/preamble/socialPreambleBG.png");
   background-size: 720px 720px;
 }
