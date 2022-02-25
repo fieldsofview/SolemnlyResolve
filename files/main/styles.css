@@ -394,7 +394,7 @@ body {
 #u796 {
   border-width:0px;
   position:absolute;
-  left:963px;
+  left:964px;
   top:259px;
   width:36px;
   height:36px;
@@ -1004,7 +1004,7 @@ body {
 #u816 {
   border-width:0px;
   position:absolute;
-  left:963px;
+  left:964px;
   top:121px;
   width:36px;
   height:36px;
@@ -1793,6 +1793,7 @@ body {
   height:36px;
   display:flex;
 }
+
 #u844 .text {
   position:absolute;
   align-self:center;
@@ -7433,6 +7434,15 @@ body {
   word-wrap:break-word;
   text-transform:none;
   visibility:hidden;
+}
+
+#icon_img {
+  border-width:0px;
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:36px;
+  height:36px;
 }
 
 #preambleContainer{
