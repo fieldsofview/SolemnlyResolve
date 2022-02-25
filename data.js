@@ -106,8 +106,8 @@ const task5 = {
     choice2:`Global fashion brands argue that factory owners are violating labour laws by laying off workers en-masse. They add that contractual employment takes away employee benefits required by their sourcing agreements with the factories.
     <br><br> 
     Support their call to impose sanctions on all such factories and shift to alternative sourcing from Bangladesh and Indonesia.`,
-    choice3: `Garment factory owners argue that the sudden move by the state government has put an enormous financial burden on them. Given the low margins in export of garments, they have to undertake contractual employment to retain some workers. They also argue that the government should not interfere in their freedom of practising their profession. 
-    <br><br> 
+    choice3: `Garment factory owners argue that the sudden move has put an enormous financial burden on them. Given the low margins in garment exports, they have to undertake contractual employment to retain some workers. They also argue that the government should not interfere in their freedom of practising their profession. 
+    <br><br>
     Support the factory owners in retaining some workers on contracts and demanding a deregulation of wages based on market forces.`,
     delta1: [t, -t, -t, t],
     delta2: [-2*t, t, t, 2*t],
