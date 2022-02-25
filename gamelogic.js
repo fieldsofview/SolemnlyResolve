@@ -383,7 +383,7 @@ const moneyBox = {
     },
 
     clickingDown: function () {
-        if (moneyBox.moneyCount > Math.min(3, playerCoins[this.current])) {
+        if (moneyBox.moneyCount > Math.min(3, playerCoins[moneyBox.current])) {
             moneyBox.moneyCount--;
         }
         moneyBox.counterupdater();
@@ -651,7 +651,7 @@ function nextScenario(t) {
         winningFunction();
         //go to preamble page
         // window.location.href = './preamble.html';
-    } else{
+    } else {
         situationFrontEnd.updateSituation(situations[gameVariables.index]);
     }
 }
