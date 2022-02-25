@@ -7409,8 +7409,8 @@ body {
   width:986px;
   height:592px;
   /* These do the magc animation */
-  transition: transform 5s;
-  transform: scale(10%);
+  /* transition: transform 5s;
+  transform: scale(10%); */
 }
 #u1057 {
   border-width:0px;

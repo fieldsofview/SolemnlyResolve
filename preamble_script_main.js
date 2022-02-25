@@ -91,8 +91,8 @@ getNames();
 getPreamble();
 let names_array = [playerNames.A, playerNames.B,playerNames.C, playerNames.D, ];
 let container = document.createElement('div');
-container.style.transition='transform 5s';
-container.style.transform = 'scale(10%)';
+// container.style.transition='transform 5s';
+container.style.transform = 'scale(100%)';
 
 function preamble(elements){
     let wrapper = document.getElementById("u1057");

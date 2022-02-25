@@ -212,14 +212,14 @@ const playerNamesFrontEnd = {
     boxC: document.querySelector("#u1037_text").children[0].children[0],
     boxD: document.querySelector("#u1038_text").children[0].children[0],
     updatePlayerNames: function (p) {
-        this.A.textContent = p.A;
-        this.B.textContent = p.B;
-        this.C.textContent = p.C;
-        this.D.textContent = p.D;
-        this.boxA.textContent = p.A;
-        this.boxB.textContent = p.B;
-        this.boxC.textContent = p.C;
-        this.boxD.textContent = p.D;
+        this.A.textContent = playerNamesFrontEnd.labelA;
+        this.B.textContent = playerNamesFrontEnd.labelB;
+        this.C.textContent = playerNamesFrontEnd.labelC;
+        this.D.textContent = playerNamesFrontEnd.labelD;
+        this.boxA.textContent = playerNamesFrontEnd.labelA;
+        this.boxB.textContent = playerNamesFrontEnd.labelB;
+        this.boxC.textContent = playerNamesFrontEnd.labelC;
+        this.boxD.textContent = playerNamesFrontEnd.labelD;
         this.label_A = p.A;
         this.label_B = p.B;
         this.label_C = p.C;
@@ -576,15 +576,15 @@ const overlayThings = {
         if (this.displayFlag) {
             this.imageGroup.style.display = 'block';
             // this.imageBox.style.display = 'none';
-            overlayThings.imageBox.style.transform = 'scale(10%)'
-            container.style.transform = 'scale(10%)';
-            // overlayThings.imageBox.style.transition='transform 6s'
-            overlayThings.imageBox.style.transform = 'scale(100%)'
-            container.style.transform = 'scale(100%)';
+            // overlayThings.imageBox.style.transform = 'scale(10%)'
+            // container.style.transform = 'scale(10%)';
+            // // overlayThings.imageBox.style.transition='transform 6s'
+            // overlayThings.imageBox.style.transform = 'scale(100%)'
+            // container.style.transform = 'scale(100%)';
 
         } else {
             this.imageGroup.style.display = 'none';
-            overlayThings.imageBox.style.transform = 'scale(10%)'
+            // overlayThings.imageBox.style.transform = 'scale(10%)'
         }
     },
 
