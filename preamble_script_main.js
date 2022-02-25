@@ -143,7 +143,7 @@ function update_array(conditions, names){
     console.log(conditions);
     console.log(names);
     array[1][0] = names[0] + ", " + names[1] + ", " + names[2] + ", " + names[3]
-    array[24][0] = today_date();
+    array[31][0] = today_date();
     const pos = [4, 5, 6, 12, 13, 14, 17, 18, 19, 20, 21, 25, 26, 29];
     for(let i = 0; i < pos.length; i++){
         let array_pos = pos[i];

@@ -30,6 +30,7 @@ const stats = {
                 this.preambleOG.push(false);
             }
         });
+
     },
 
     updatePreamble: function (p) {
@@ -52,7 +53,8 @@ const stats = {
             }
         });
         // analyticsObject.preambleStats=temp;
-        sessionStorage.preamble = JSON.stringify(temp);
+        let temp2 = [temp[10],temp[11],temp[12],temp[0],temp[1],temp[2],temp[3],temp[4],temp[5],temp[6],temp[7],temp[8],temp[9],temp[13]]
+        sessionStorage.preamble = JSON.stringify(temp2);
     },
 
     exportPreambleAnalytics: function () {
@@ -108,7 +110,7 @@ const gameVariables = {
     scenarioSelect: function (number = 0) {
         switch (number) {
             case 0:
-                stats.setStats([75, 25, 25, 50]);
+                stats.setStats([75, 50, 25, 25]);
                 stats.setPreamble([1, -1, 1, 1, 1, 1, 1, 1, 1, -1, -1, 1, 1, 1]);
                 break;
             case 1:
@@ -149,6 +151,7 @@ const gameVariables = {
         this.getScenario();
         this.getPlayerNames();
         this.scenarioSelect(this.scenario);
+        stats.exportPreamble();
     },
 };
 
@@ -604,6 +607,7 @@ function initEverything() {
     barsFrontEnd.updateBars();
     moneySidebar.update();
     moneyBox.initOnClick();
+    getPreamble();
 
     overlayThings.init();
 
