@@ -647,13 +647,13 @@ function nextScenario(t) {
         gameVariables.index++;
         console.log(gameVariables.index);
     }
-    if (gameVariables.index == 11) {
+    if (gameVariables.index == 12) {
         winningFunction();
         //go to preamble page
         // window.location.href = './preamble.html';
+    } else{
+        situationFrontEnd.updateSituation(situations[gameVariables.index]);
     }
-
-    situationFrontEnd.updateSituation(situations[gameVariables.index]);
 }
 
 //Things to add exit functionality for the game
@@ -687,6 +687,7 @@ function preambleFunction() {
 
 function winningFunction() {
     //export thing to memory
+    console.log("winning function executed");
     stats.exportPreamble();
     choicesUI.choicesHide();
 
