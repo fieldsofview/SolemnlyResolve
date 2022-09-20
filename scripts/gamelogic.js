@@ -192,7 +192,7 @@ function giveButton(whichOne) {
 
 
 const centralImage = document.querySelector("#u1057_img");
-centralImage.src = "/images/situations/1.png";
+centralImage.src = "../images/situations/1.png";
 
 const playerNamesFrontEnd = {
     A: document.querySelector("#u890_text").children[0].children[0],
@@ -325,8 +325,8 @@ const moneySidebar = {
 };
 
 const moneyBox = {
-    whiteShape: 'images/main/rectangle_234_u1031.svg',
-    blueShape: 'images/main/rectangle_235_u1032.svg',
+    whiteShape: '../images/main/rectangle_234_u1031.svg',
+    blueShape: '../images/main/rectangle_235_u1032.svg',
     boxWrapper: document.querySelector("#u1029"),
     Name0: document.querySelector("#Name0"),
     Name1: document.querySelector("#Name1"),
@@ -532,7 +532,7 @@ const overlayThings = {
     repeatFlag: true,
 
     init: function () {
-        this.imageBox.src = './images/situations/' + gameVariables.scenario + '.png';
+        this.imageBox.src = '../images/situations/' + gameVariables.scenario + '.png';
         // this.imageGroup.style.zIndex = '-1'
         this.imageGroup.style.display = 'block';
         this.imageGroup.addEventListener('click', this.clickDisappear);
@@ -632,7 +632,7 @@ function updateEverything() {
 
 
 function moveThingsAlong(d) {
-    let temp = './images/newspapers/' + gameVariables.index + 'choice' + d + '.png';
+    let temp = '../images/newspapers/' + gameVariables.index + 'choice' + d + '.png';
     console.log(temp);
     overlayThings.changeImage(temp, true);
 
@@ -685,7 +685,7 @@ function preambleFunction() {
 
 
     overlayThings.displayFlag = true;
-    overlayThings.changeImage('images/bluePreamble.png', true);
+    overlayThings.changeImage('../images/bluePreamble.png', true);
     // overlayThings.changeImage('', true);
 }
 
