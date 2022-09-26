@@ -23,6 +23,16 @@
   src: url("../../fonts/Belgrano-Regular.ttf");
 }
 
+@font-face {
+  font-family: "Tunga";
+  src: url("../../fonts/Tunga.ttf");
+}
+
+@font-face {
+  font-family: "Noto";
+  src: url("../../fonts/NotoSerifKannada-VariableFont_wght.ttf");
+}
+
 body {
   margin:0px;
   background-color:rgba(248, 248, 248, 1);
@@ -2019,6 +2029,9 @@ body {
   color:#FFFFFF;
   text-align:left;
   line-height:20px;
+}
+p.kn {
+  font-family:"Noto", "Inter", sans-serif;
 }
 #u851 .text {
   position:absolute;

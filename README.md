@@ -18,16 +18,26 @@ This document contains notes on the design, implementation and enhancements of t
 		^ 
 
 * PLANNED
-	- ="resources -> ="../resources
-	- 'resources -> '../resources
-	- ="data -> ="../data
-	- ="files -> ="../files
-	- ="images -> ="../images
-	- href="/images -> href="../images
-	- "./gamelogic.js" -> "../scripts/gamelogic.js"
+	- Path changes
+		^ ="resources -> ="../resources
+		^ 'resources -> '../resources
+		^ ="data -> ="../data
+		^ ="files -> ="../files
+		^ ="images -> ="../images
+		^ href="/images -> href="../images
+		^ "./gamelogic.js" -> "../scripts/gamelogic.js"
+	- 
 
 ## Enhancements
 
 
 ### Multi-language Support
+
+#### Kannada
+
+* "font-family: 'Tunga';"
+
 ### Dynamic Scenarios and Situations
+
+* `page4.html`
+	- add a dropdown for scenario

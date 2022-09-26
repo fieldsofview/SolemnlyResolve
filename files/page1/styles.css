@@ -18,6 +18,31 @@
   src: url("../../fonts/Inter-MediumItalic.woff");
 }
 
+@font-face {
+  font-family: "Baraha";
+  src: url("../../fonts/BARAHA_Kannada.ttf");
+}
+
+@font-face {
+  font-family: "Tunga";
+  src: url("../../fonts/Tunga.ttf");
+}
+
+@font-face {
+  font-family: "Noto";
+  src: url("../../fonts/NotoSerifKannada-VariableFont_wght.ttf");
+}
+
+@font-face {
+  font-family: "Tiro";
+  src: url("../../fonts/TiroKannada-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Bandipura";
+  src: url("../../fonts/ATS-Bandipura-Bold.woff");
+}
+
 body {
   margin:0px;
   background-color:rgba(248, 248, 248, 1);

@@ -1,14 +1,17 @@
 const t=5;
+
 const task0 = {
     index: 0,
-    text: `Parliament has passed a new law, which states that village communities shall be responsible for protection of biodiversity in the forest. The law also gives village communities the right to convert forest villages into revenue villages, allowing construction, sale and commercial activity.`,
-    choice1: `Conservationists argue against the law stating that such a move will only favour influential village communities and also lead to degradation of forest land over time.<br><br> Support their demand of repealing the law.`,
-    choice2:`A large section of civil society argues in favour of the law stating that it will finally decentralise governance over land and allow local communities to plan for their needs.
+    text: `ಟಿವಿ ಸುದ್ದಿ ವಾಹಿನಿಯೊಂದು ಇತ್ತೀಚೆಗೆ ಹಿರಿಯ ಸರ್ಕಾರಿ ಅಧಿಕಾರಿಯೊಬ್ಬರ ಮೇಲೆ 'ಸ್ಟಿಂಗ್ ಆಪರೇಷನ್' ನಡೆಸಿತ್ತು. ತೆರಿಗೆದಾರರ ಹಣಕ್ಕೆ ಸಂಬಂಧಿಸಿದ ಹಣಕಾಸಿನ ಹಗರಣದಲ್ಲಿ ಅವರ ಪಾತ್ರವನ್ನು ವರದಿಯು ಬಹಿರಂಗಪಡಿಸಿತು, ನಂತರ ಅವರನ್ನು ಸೇವೆಯಿಂದ ವಜಾಗೊಳಿಸಲಾಯಿತು. ಸಚಿವಾಲಯದಲ್ಲಿ ಯಾವುದೇ ಇತರ ಅಧಿಕಾರಿಗಳಿಂದ ವಂಚನೆಯನ್ನು ತನಿಖೆ ಮಾಡಲು ಆಯೋಗವನ್ನು ಸ್ಥಾಪಿಸಲಾಗಿದೆ. ಅದರ ನಂತರ, ಅಧಿಕೃತ ಮತ್ತು ಅವರ ಪತಿ ಅವರ ಮನೆಯಲ್ಲಿ ರಾಜಿ ಮಾಡಿಕೊಳ್ಳುವ ಚಿತ್ರಗಳು ವಿವಿಧ ಆನ್‌ಲೈನ್ ಮಾಧ್ಯಮಗಳ ಮೂಲಕ ಸೋರಿಕೆಯಾದವು. ಗೌಪ್ಯತೆ ಉಲ್ಲಂಘನೆಗಳು ಅಸಂವಿಧಾನಿಕ ಎಂದು ತಿಳಿಸಿದ MIB ಚಾನೆಲ್‌ನ ಪರವಾನಗಿಯನ್ನು ರದ್ದುಗೊಳಿಸುವಂತೆ ಆದೇಶಿಸಿದೆ.`,
+    choice1: `ಟಿವಿ ಸುದ್ದಿ ವಾಹಿನಿಯು ಕಥೆಯನ್ನು ವರದಿ ಮಾಡುವಾಗ ಪತ್ರಕರ್ತರು ಬಳಸಿದ ವಿಧಾನಗಳ ಬಗ್ಗೆ ತಿಳಿದಿರಲಿಲ್ಲ ಎಂದು ವಾದಿಸುತ್ತದೆ. ಪತ್ರಕರ್ತರು ಶಿಸ್ತು ಕ್ರಮವನ್ನು ಎದುರಿಸಬೇಕು ಆದರೆ ಚಾನೆಲ್ ಅನ್ನು ಪ್ರಸಾರ ಮಾಡಬಾರದು ಎಂದು ಅದು ಹೇಳುತ್ತದೆ, ಏಕೆಂದರೆ ಇದು ಪತ್ರಿಕಾ ಸ್ವಾತಂತ್ರ್ಯದ ಪ್ರಮುಖ ಉಲ್ಲಂಘನೆಯಾಗಿದೆ. ಕೇಂದ್ರ ಸಚಿವಾಲಯದಲ್ಲಿನ ಭ್ರಷ್ಟಾಚಾರದ ವರದಿಗಳ ನಂತರ ಮಾತ್ರ ಸರ್ಕಾರ ಅವರ ವಿರುದ್ಧ ಕ್ರಮಕೈಗೊಳ್ಳುತ್ತಿದೆ ಎಂದು ಅದು ಸೇರಿಸುತ್ತದೆ.
+        <br><br> 
+        ಪರವಾನಗಿಯನ್ನು ಮರುಸ್ಥಾಪಿಸಲು ಮತ್ತು ಕಥೆಯ ಮುಂದುವರಿದ ಪ್ರಸಾರವನ್ನು ಅನುಮತಿಸಲು ಅವರ ಬೇಡಿಕೆಯನ್ನು ಬೆಂಬಲಿಸಿ.`,
+    choice2:`ಪತ್ರಕರ್ತರಿಂದ ಖಾಸಗಿತನ ಉಲ್ಲಂಘನೆಯಿಂದ ಚಾನೆಲ್ ಲಾಭ ಪಡೆದಿದ್ದು, ಅದಕ್ಕೆ ಅನುಮತಿ ನೀಡಬೇಕು ಎಂಬುದು ಕೇಂದ್ರದ ವಾದ. ಭ್ರಷ್ಟಾಚಾರವನ್ನು ಬೇರು ಸಮೇತ ಕಿತ್ತೊಗೆಯಲು ಬದ್ಧ ಎಂದು ಹೇಳಿದ್ದು, ಅದಕ್ಕಾಗಿ ಆಯೋಗ ರಚಿಸಿದೆ.
     <br><br> 
-    Support their demand of notifying the localised governance provisions at the earliest.`,
-    choice3: `Industry and farmer association argue in favour of the law stating that this will enable better food security and improvement of livelihood opportunities for local communities.
+    ಯಾವುದೇ ನ್ಯಾಯಾಂಗ ಪ್ರಕ್ರಿಯೆಗಳಿಗೆ ಒಳಪಟ್ಟು ಚಾನಲ್‌ನ ಪರವಾನಗಿಯನ್ನು ಶಾಶ್ವತವಾಗಿ ಹಿಂತೆಗೆದುಕೊಳ್ಳುವ ಅವರ ಕ್ರಮವನ್ನು ಬೆಂಬಲಿಸಿ ಮತ್ತು ಕಥೆಯ ಮುಂದಿನ ಪ್ರಕಟಣೆಯನ್ನು ನಿಷೇಧಿಸಿ.`,
+    choice3: `ಸಾಮಾಜಿಕ ಮಾಧ್ಯಮದಲ್ಲಿನ ವೀಕ್ಷಕರು ಪತ್ರಕರ್ತರಿಗೆ ಅಧಿಕೃತ ಪ್ರವೇಶವನ್ನು ಪಡೆಯಲು ಬೇರೆ ಆಯ್ಕೆಗಳಿಲ್ಲ ಎಂದು ವಾದಿಸುತ್ತಾರೆ. ಸರ್ಕಾರದ ಕಾರ್ಯವೈಖರಿ ಮತ್ತು ಅದರೊಳಗೆ ಯಾವುದೇ ಭ್ರಷ್ಟಾಚಾರದ ಮಾಹಿತಿ ಪಡೆಯುವ ಹಕ್ಕನ್ನು ಅವರು ಹೊಂದಿದ್ದಾರೆ ಎಂದು ಅವರು ಹೇಳುತ್ತಾರೆ.
     <br><br> 
-    Support their demand of implementing the law in its entirety.`,
+    ಚಾನೆಲ್‌ನ ಪರವಾನಗಿಯನ್ನು ಮರುಸ್ಥಾಪಿಸಲು ಮತ್ತು ಪತ್ರಕರ್ತರನ್ನು ಮುಕ್ತಗೊಳಿಸಲು ಅವರ ಬೇಡಿಕೆಯನ್ನು ಬೆಂಬಲಿಸಿ.`,
     delta1: [-t, t, 0, -t],
     delta2: [-t, t, t, 0],
     delta3: [t, 2*t, -t, t],
