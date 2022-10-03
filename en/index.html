@@ -53,10 +53,41 @@
       return '../resources/reload.html';
     };
   </script>
-
   <style type="text/css">
-    #u4, #u10 p {
-      font-family: 'Noto';
+    #uCategories {
+      border-width:0px;
+      position: absolute;
+      left: 500px;
+      top: 450px;
+      width: 347px;
+      height:40px;
+      display: flex;
+
+      text-align: center;
+    }
+
+    #uLanguages {
+      border-width:0px;
+      position: absolute;
+      left: 500px;
+      top: 250px;
+      width: 347px;
+      height:40px;
+      display: flex; 
+    }
+
+    #categories, #languages {
+      border-width:1px;
+      border-color: #466da1;
+      padding: 10px;
+      border-radius: 4px;
+
+      background-color: #f6f6f6;
+      color: #53739f;
+    }
+
+    #categories, #languages option {
+      font-family: "Inter", sans-serif;
     }
   </style>
 </head>
@@ -80,31 +111,33 @@
         </div>
       </div>
 
-      <!-- Group 330 (Group) -->
-      <div id="u3" class="ax_default" data-label="Group 330" data-left="485" data-top="173" data-width="310"
-        data-height="325">
-
-        <!-- Unnamed (Rectangle) -->
-        <div id="u4" class="ax_default shape">
-          <div id="u4_div" class=""></div>
-          <div id="u4_text" class="text ">
-            <p style="font-size:18px;"><span
-                style="font-weight:500;">ಭಾರತ ಸ್ವತಂತ್ರ ರಾಷ್ಟ್ರವಾಗಿ 75 ವರ್ಷಗಳನ್ನು ಪೂರೈಸಲಿದೆ.</span></p>
-            <p style="font-size:8px;"><span
-                style="font-weight:500;"><br></span>
-            </p>
-            <p style="font-size:12px;"><span style="font-weight:400;">ಹಿಂತಿರುಗಿ ನೋಡಿದಾಗ, ನಮ್ಮ ಇತಿಹಾಸವು ಭರವಸೆ ಮತ್ತು ಸಂಘರ್ಷದ ಮೋಡಗಳಲ್ಲಿ ಮುಚ್ಚಿಹೋಗಿದೆ.</span></p>
-            <p style="font-size:6px;"><span style="font-weight:400;"><br></span></p>
-            <p style="font-size:12px;"><span style="font-weight:400;">ಈ ಸಮಾಜದ ಮಾರ್ಗದರ್ಶಕ ತತ್ವಗಳನ್ನು ನಮ್ಮ ಸಂವಿಧಾನದಲ್ಲಿ ಪೀಠಿಕೆ ಸೇರಿದಂತೆ ರೂಪಿಸಿದಾಗ ಹುಟ್ಟದೇ ಇರುವ ಪೀಳಿಗೆ ಇಂದು ನಮ್ಮಲ್ಲಿದೆ.</span></p>
-            <p style="font-size:6px;"><span style="font-weight:400;"><br></span></p>
-            <p style="font-size:12px;"><span style="font-weight:400;">ಈ ಪೀಳಿಗೆಯಲ್ಲಿ ಎಷ್ಟು ಮಂದಿ, ಮತ್ತು ಹಳೆಯವರೂ ಸಹ ಈ ಮಾರ್ಗದರ್ಶಿ ತತ್ವಗಳನ್ನು ಒಪ್ಪುತ್ತಾರೆ?</span></p>
-            <p style="font-size:6px;"><span style="font-weight:400;"><br></span></p>
-            <p style="font-size:12px;"><span style="font-weight:400;">ಅಸಮಾನತೆ ಮತ್ತು ಹವಾಮಾನದ ಅಭದ್ರತೆಯಿಂದ ಆವೃತವಾಗಿರುವ ಈ ಭೂದೃಶ್ಯದಲ್ಲಿ ನಾವು ಯಾವ ಆದ್ಯತೆಗಳ ಕಡೆಗೆ ಕೆಲಸ ಮಾಡಲು ಬಯಸುತ್ತೇವೆ?
-              </span></p>
-            <p style="font-size:6px;"><span style="font-weight:400;"><br></span></p>
-            <p style="font-size:12px;"><span style="font-weight:400;">ನಾಳೆಗಾಗಿ ನಾವು ಏನನ್ನು ಕಲ್ಪಿಸಿಕೊಳ್ಳುತ್ತೇವೆ, ಹೇಳುವ ಧೈರ್ಯ, ಭರವಸೆ?</span></p>
-          </div>
-        </div>
+      <!-- Choose Languages -->
+      <div id="uLanguages" class="ax_default shape">
+        <p style="font-size: 18px;">
+          <span style="font-family:'Inter Medium', 'Inter', sans-serif;font-weight:500;">
+            SELECT<br/>LANGUAGE&nbsp;
+          </span>
+        </p>
+        <select name="languages" id="languages">
+          <option value="en">English</option>
+          <option value="kn">Kannada</option>
+        </select>
+      </div>
+     
+      <!-- Choose Instance -->
+      <div id="uCategories" class="ax_default shape">
+        <p style="font-size: 18px;">
+          <span style="font-family:'Inter Medium', 'Inter', sans-serif;font-weight:500;">
+            SELECT<br/> CATEGORY&nbsp;
+          </span>
+        </p>
+        <select name="categories" id="categories">
+          <option value="general">General</option>
+          <option value="climate_change">Climate Change</option>
+          <option value="gender">Gender</option>
+          <option value="religious_freedoms">Religious Freedoms</option>
+          <option value="livelihoods">Livelihoods and Labour</option>
+        </select>
       </div>
 
       <!-- Rectangle (Image) -->
@@ -116,8 +149,7 @@
       </div>
 
       <!-- Group (Group) -->
-      <a href="./names.html" id="u6" class="ax_default" data-label="Group" data-left="540" data-top="599" data-width="201"
-        data-height="40">
+      <a id="u6" class="ax_default category-selector" data-label="Group" data-left="540" data-top="599" data-width="201" data-height="40" style="cursor: pointer;">
 
         <!-- Vector (Shape) -->
         <div id="u7" class="ax_default shape" data-label="Vector">
@@ -131,18 +163,10 @@
         <div id="u9" class="ax_default shape">
           <div id="u9_div" class=""></div>
           <div id="u9_text" class="text ">
-            <p><span style="font-family: 'Noto';">ಮುಂದುವರಿ</span></p>
+            <p><span>PROCEED</span></p>
           </div>
         </div>
       </a>
-
-      <!-- Unnamed (Rectangle) -->
-      <div id="u10" class="ax_default shape">
-        <div id="u10_div" class=""></div>
-        <div id="u10_text" class="text ">
-          <p><span style="letter-spacing:0.36px;">ಅವಕಾಶವಿದ್ದರೆ, ನೀವು ಯಾವ ಮೌಲ್ಯಗಳನ್ನು ಎತ್ತಿಹಿಡಿಯಲು 'ಗಂಭೀರವಾಗಿ ಪರಿಹರಿಸುತ್ತೀರಿ'?</span></p>
-        </div>
-      </div>
 
       <!-- Group 585 1 (Rectangle) -->
       <div id="u11" class="ax_default shape" data-label="Group 585 1">
@@ -184,65 +208,17 @@
         </div>
       </div>
     </div>
-    <div id="wrapper"
-      style=" position: absolute; left: 0px; top: 0px; width:1280px; height: 720px; display: flex; overflow: hidden; ">
-      <img id="u16_img" class="img " src="../images/page1/u16.png" />
-
-      <img id="u17_img" class="img " src="../images/page1/u17.png" />
-
-      <img id="u18_img" class="img " src="../images/page1/u18.png" />
-
-      <img id="u19_img" class="img " src="../images/page1/u19.png" />
-
-    </div>
-
-    <!-- Unnamed (Image) -->
-    <div id="u20" class="ax_default image">
-      <img id="u20_img" class="img " src="../images/page1/u20.png" />
-      <div id="u20_text" class="text " style="display:none; visibility: hidden">
-        <p></p>
-      </div>
-    </div>
   </div>
   <script src="../resources/scripts/axure/ios.js"></script>
   <script>
-    // Set session configuration values (language, category, etc.)
-    sessionStorage.language = 'kn';
+    document.querySelector(".category-selector").addEventListener('click', checker);
     
-    const params = new URLSearchParams(window.location.search);
+    function checker() {
+      let category = document.getElementById("categories").value;
+      let language = document.getElementById("languages").value;
 
-    if (params.has('category')) {
-      let category = params.get('category');
-      sessionStorage.category = category;
-    } else {
-      sessionStorage.category = 'general';
+      window.location.href = `../${language}/page1.html?category=${category}`;
     }
-
-    console.log(sessionStorage.category);
-    
-    const wrapper = document.querySelector("#wrapper");
-    const coverImage = document.querySelector("#u20_img");
-    const picture1 = document.querySelector("#u16_img");
-    const picture2 = document.querySelector("#u17_img");
-    const picture3 = document.querySelector("#u18_img");
-    const picture4 = document.querySelector("#u19_img");
-    const myTimeout = setTimeout(animateCover, 2000);
-    const myTimeout2 = setTimeout(deleteCover, 6500);
-
-    function animateCover() {
-      coverImage.style = "opacity:0%";
-      picture1.style.top = '-459px';
-      picture2.style.left = '1280px';
-      picture3.style.top = '720px';
-      picture4.style.left = '-624px';
-    }
-
-    function deleteCover(){
-      wrapper.remove();
-      document.querySelector("#u20").remove();
-    }
-
-    const proceedButton = document.querySelector("#u53");
   </script>
 </body>
 

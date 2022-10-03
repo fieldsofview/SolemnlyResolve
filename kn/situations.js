@@ -255,29 +255,20 @@ const allTasks = {
     12: task11
 }
 
-function shuffle(array) {
-    array.sort(() => Math.random() - 0.5);
-    return array;
-}
-
-// const situations = [task0,task1,task2,task3,task4,task5,task6,task7,task8,task9,task10,task11];
 let situations = [];
 
-const instanceMap = {
-    'climate change': [1, 3, 4, 5],
-    'education': [3, 7, 8],
-    'media': [1, 2, 4, 6]
-}
-
-// Populate situations based on instance
+// Populate situations based on category
 function genSituations() {
-    console.log(sessionStorage.instance);
+    console.log(sessionStorage.category);
+    console.log(sessionStorage.language);
 
-    // Randomise task order and into situations
-    // shuffle(instanceMap[sessionStorage.instance]).forEach((taskId, index) => {
-    instanceMap[sessionStorage.instance].forEach((taskId, index) => {
+    let instanceMap = JSON.parse(categories);
+
+    instanceMap[sessionStorage.category].sort(() => Math.random() - 0.5).forEach((taskId, index) => {
         situations.push(allTasks[taskId]);
     });
+
+    console.log(situations);
 }
 
-genSituations()
+genSituations();

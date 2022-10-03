@@ -208,7 +208,19 @@
   </div>
   <script src="../resources/scripts/axure/ios.js"></script>
   <script>
+    // Set session configuration values (language, category, etc.)
     sessionStorage.language = 'en';
+    
+    const params = new URLSearchParams(window.location.search);
+
+    if (params.has('category')) {
+      let category = params.get('category');
+      sessionStorage.category = category;
+    } else {
+      sessionStorage.category = 'general';
+    }
+
+    console.log(sessionStorage.category);
 
     const wrapper = document.querySelector("#wrapper");
     const coverImage = document.querySelector("#u20_img");

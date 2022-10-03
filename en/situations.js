@@ -1,4 +1,5 @@
 // ENGLISH
+// import instanceMap from '../scripts/categories.js';
 
 const t=5;
 const task0 = {
@@ -239,4 +240,36 @@ const task11 = {
     delta3p:[1, 0, 1, 1, 1, 0, 0, 0, -1, 0, 0, 0, 1, -1]
 };
 
-const situations = [task0,task1,task2,task3,task4,task5,task6,task7,task8,task9,task10,task11];
+const allTasks = {
+    1: task0, 
+    2: task1, 
+    3: task2, 
+    4: task3, 
+    5: task4, 
+    6: task5, 
+    7: task6, 
+    8: task7, 
+    9: task8, 
+    10: task9, 
+    11: task10, 
+    12: task11
+}
+
+// const situations = [task0,task1,task2,task3,task4,task5,task6,task7,task8,task9,task10,task11];
+let situations = [];
+
+// Populate situations based on category
+function genSituations() {
+    console.log(sessionStorage.category);
+    console.log(sessionStorage.language);
+
+    let instanceMap = JSON.parse(categories);
+
+    instanceMap[sessionStorage.category].sort(() => Math.random() - 0.5).forEach((taskId, index) => {
+        situations.push(allTasks[taskId]);
+    });
+
+    console.log(situations);
+}
+
+genSituations();

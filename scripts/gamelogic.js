@@ -274,7 +274,7 @@ function giveButton(whichOne) {
             this.index.textContent = 'SITUATION ' + (gameVariables.index + 1);
             break;
           case 'kn':
-            this.index.textContent = 'ಪರಿಸ್ಥಿತಿ ' + (gameVariables.index + 1);
+            this.index.textContent = 'ಸನ್ನಿವೇಶ ' + (gameVariables.index + 1);
             break;    
           default:
             this.index.textContent = 'SITUATION ' + (gameVariables.index + 1);
