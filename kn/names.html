@@ -828,6 +828,8 @@
     </div>
     <script src="../resources/scripts/axure/ios.js"></script>
     <script>
+      console.log(sessionStorage.language);
+
       const form = document.querySelector("#nameCollector");
       var playerNames = {
         A: ``,
@@ -853,8 +855,8 @@
   
         if (!flag) {
           sessionStorage.playerNames = JSON.stringify(playerNames);
-          sessionStorage.language = 'kn';
           console.log(playerNames);
+          
           window.location.href = './page2.html';
         } else {
           alert("ಮುಂದುವರಿಯುವ ಮೊದಲು ದಯವಿಟ್ಟು ಎಲ್ಲಾ ಹೆಸರುಗಳನ್ನು ಭರ್ತಿ ಮಾಡಿ");

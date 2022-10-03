@@ -53,32 +53,6 @@
       return '../resources/reload.html';
     };
   </script>
-
-  <style type="text/css">
-    #uInstances {
-      border-width:0px;
-      position:absolute;
-      left:476px;
-      top:640px;
-      width:347px;
-      height:40px;
-      display:flex;
-    }
-
-    #instances {
-      border-width:1px;
-      border-color: #466da1;
-      padding: 10px;
-      border-radius: 4px;
-
-      background-color: #f6f6f6;
-      color: #53739f;
-    }
-
-    #instances option {
-      font-family: "Inter", sans-serif;
-    }
-  </style>
 </head>
 
 <body>
@@ -201,8 +175,8 @@
       </div>
 
       <!-- Group (Group) -->
-      <a id="u18" class="ax_default gen-scenarios" data-label="Group" data-left="876" data-top="640" data-width="347"
-        data-height="40" style="cursor: pointer;">
+      <a href="./scenarios.html" id="u18" class="ax_default" data-label="Group" data-left="876" data-top="640" data-width="347"
+        data-height="40">
 
         <!-- Vector (Shape) -->
         <div id="u19" class="ax_default shape" data-label="Vector">
@@ -229,16 +203,6 @@
           </div>
         </div>
       </a>
-
-      <!-- Choose Instance -->
-      <div id="uInstances" class="ax_default shape">
-        <select name="instances" id="instances">
-          <option disabled selected value> -- Select Instance -- </option>
-          <option value="climate change">Climate Change</option>
-          <option value="education">Education</option>
-          <option value="media">Media</option>
-        </select>
-      </div>
 
       <!-- Group (Group) -->
       <div id="u22" class="ax_default" data-label="Group" data-left="620" data-top="218" data-width="50"
@@ -1072,21 +1036,6 @@
     </div>
   </div>
   <script src="../resources/scripts/axure/ios.js"></script>
-  <script>
-    console.log(sessionStorage.language);
-    document.querySelector(".gen-scenarios").addEventListener('click', checker);
-    
-    function checker() {
-      let instance = document.getElementById("instances").value;
-      console.log(instance);
-      if (instance) {
-        sessionStorage.instance = instance;
-        window.location.href = './scenarios.html';
-      } else {
-        alert("Please select Instance before proceeding");
-      }
-    }
-  </script>
 </body>
 
 </html>
