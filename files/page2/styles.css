@@ -18,6 +18,11 @@
   src: url("../../fonts/Inter-MediumItalic.woff");
 }
 
+@font-face {
+  font-family: "Noto";
+  src: url("../../fonts/NotoSerifKannada-VariableFont_wght.ttf");
+}
+
 body {
   margin:0px;
   background-color:rgba(248, 248, 248, 1);

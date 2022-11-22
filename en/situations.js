@@ -258,14 +258,16 @@ const allTasks = {
 // const situations = [task0,task1,task2,task3,task4,task5,task6,task7,task8,task9,task10,task11];
 let situations = [];
 
-// Populate situations based on category
+// Populate situations based on catego4y
 function genSituations() {
     console.log(sessionStorage.category);
     console.log(sessionStorage.language);
 
     let instanceMap = JSON.parse(categories);
 
+    // Randomise situations
     instanceMap[sessionStorage.category].sort(() => Math.random() - 0.5).forEach((taskId, index) => {
+    // instanceMap[sessionStorage.category].forEach((taskId, index) => {
         situations.push(allTasks[taskId]);
     });
 

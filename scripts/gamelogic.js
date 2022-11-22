@@ -643,7 +643,9 @@ const overlayThings = {
 
 
   function moveThingsAlong(d) {
-    let temp = '../images/newspapers/' + gameVariables.index + 'choice' + d + '.png';
+    let situIdx = situations[gameVariables.index].index;
+    // let temp = '../images/newspapers/' + gameVariables.index + 'choice' + d + '.png';
+    let temp = '../images/newspapers/' + situIdx + 'choice' + d + '.png';
     console.log(temp);
     overlayThings.changeImage(temp, true);
 
