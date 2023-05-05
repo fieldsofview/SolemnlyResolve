@@ -282,7 +282,7 @@ function giveButton(whichOne) {
         }
         
         // this.progressBar.style.width = (15 + 48 * s.index) + 'px';
-        this.progressBar.style.width = (15 + 48 * s.catIndex) + 'px';
+        this.progressBar.style.width = (15 + 48 * s.catIndex) + 'px'; // NOTE: 528 / number of items should be the factor
         this.text.innerHTML = s.text;
         this.choice1.innerHTML = s.choice1;
         this.choice2.innerHTML = s.choice2;

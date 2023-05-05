@@ -7,11 +7,17 @@ This document contains notes on the design, implementation and enhancements of t
 * The game is hosted as website in Linode server
 * It's at `/var/www/html/solemnly_resolve`
 	- branch `master`
+	- Update code by `git pull origin feat-kn` (currently)
 * Access to is password-protected by .sraccess file in /etc/nginx
-* 
 
 
 ## TODO
+
+### TASKS
+[ ] Merge `feat-kn` with `master`
+[ ] Rename `master` to `main`
+[ ] Index for category is different; handle this better for PROGRESS BAR
+[ ] Issue with coins number in Firefox
 
 ## IMPLEMENTATION
 
