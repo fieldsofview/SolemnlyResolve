@@ -5478,6 +5478,9 @@ p.kn {
   padding:0px 0px 0px 0px;
   box-sizing:border-box;
   width:100%;
+
+  height: 250px;
+  overflow: auto; 
 }
 #u989_text {
   border-width:0px;
@@ -5888,6 +5891,9 @@ p.kn {
   padding:0px 0px 0px 0px;
   box-sizing:border-box;
   width:100%;
+
+  height: 250px;
+  overflow: auto; 
 }
 #u1003_text {
   border-width:0px;
@@ -6298,6 +6304,9 @@ p.kn {
   padding:0px 0px 0px 0px;
   box-sizing:border-box;
   width:100%;
+
+  height: 250px;
+  overflow: auto; 
 }
 #u1017_text {
   border-width:0px;

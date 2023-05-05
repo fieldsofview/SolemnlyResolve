@@ -268,6 +268,7 @@ function giveButton(whichOne) {
     choice3: document.querySelector("#u1017_text").children[0].children[0],
 
     updateSituation: function (s) {
+      console.log(s);
         // this.index.textContent = 'SITUATION ' + (s.index + 1);
         switch (sessionStorage.language) {
           case 'en':
@@ -280,7 +281,8 @@ function giveButton(whichOne) {
             this.index.textContent = 'SITUATION ' + (gameVariables.index + 1);
         }
         
-        this.progressBar.style.width = (15 + 48 * s.index) + 'px';
+        // this.progressBar.style.width = (15 + 48 * s.index) + 'px';
+        this.progressBar.style.width = (15 + 48 * s.catIndex) + 'px';
         this.text.innerHTML = s.text;
         this.choice1.innerHTML = s.choice1;
         this.choice2.innerHTML = s.choice2;

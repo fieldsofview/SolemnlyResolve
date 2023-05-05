@@ -3,5 +3,6 @@ categories = `{
 	"climate_change": [1, 3, 4, 5],
 	"gender": [1, 3, 4, 5],
 	"religious_freedoms": [3, 7, 8],
-	"livelihoods": [1, 2, 4, 6]
+	"livelihoods": [1, 2, 4, 6],
+	"outlive": [50, 51, 52, 53, 54, 55]
 }`;

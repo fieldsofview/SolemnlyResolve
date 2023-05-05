@@ -2,6 +2,15 @@
 
 This document contains notes on the design, implementation and enhancements of the Solemnly Resolve web application.
 
+## Deployment
+
+* The game is hosted as website in Linode server
+* It's at `/var/www/html/solemnly_resolve`
+	- branch `master`
+* Access to is password-protected by .sraccess file in /etc/nginx
+* 
+
+
 ## TODO
 
 ## IMPLEMENTATION
