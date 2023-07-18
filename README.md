@@ -2,6 +2,9 @@
 
 This document contains notes on the design, implementation and enhancements of the Solemnly Resolve web application.
 
+## Running the game locally
+* The game is a static website; hence opening the `index.html` in the `en` folder will start the game
+
 ## Deployment
 
 * The game is hosted as website in Linode server
@@ -9,7 +12,6 @@ This document contains notes on the design, implementation and enhancements of t
 	- branch `master`
 	- Update code by `git pull origin feat-kn` (currently)
 * Access to is password-protected by .sraccess file in /etc/nginx
-
 
 ## TODO
 
